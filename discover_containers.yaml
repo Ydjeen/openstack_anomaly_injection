@@ -1,0 +1,8 @@
+- hosts: control, compute
+  become: true
+
+  tasks:
+  - name: Get info on docker host
+    community.general.docker_host_info:
+      containers: yes
+    register: result
