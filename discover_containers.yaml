@@ -1,8 +1,7 @@
-- hosts: control, compute
-  become: true
-
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
   tasks:
-  - name: Get info on docker host
-    community.general.docker_host_info:
-      containers: yes
-    register: result
+  - docker_host_info:
+      containers: 'yes'
+
