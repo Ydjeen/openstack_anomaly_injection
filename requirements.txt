@@ -1,5 +1,4 @@
-ansible==2.10.3
-ansible-base==2.10.3
+ansible==2.9.9
 ansible-runner==1.4.6
 appdirs==1.4.4
 attrs==20.3.0
@@ -14,6 +13,7 @@ debtcollector==2.2.0
 decorator==4.4.2
 docutils==0.16
 dogpile.cache==1.0.2
+fasteners==0.15
 idna==2.10
 iso8601==0.1.13
 Jinja2==2.11.2
@@ -23,6 +23,7 @@ jsonpointer==2.0
 keystoneauth1==4.2.1
 lockfile==0.12.2
 MarkupSafe==1.1.1
+monotonic==1.5
 msgpack==1.0.0
 munch==2.5.0
 netaddr==0.8.0
@@ -30,6 +31,7 @@ netifaces==0.10.9
 openstacksdk==0.51.0
 os-service-types==1.7.0
 osc-lib==2.3.0
+oslo.concurrency==4.3.1
 oslo.config==8.3.2
 oslo.i18n==5.0.1
 oslo.serialization==4.0.1
