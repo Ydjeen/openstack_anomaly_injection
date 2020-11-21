@@ -53,25 +53,25 @@ def discover_containers_ansible_runner():
             pass
     return (result)
 
-def execute_task(hosts, task):
+def execute_task(auth_vars, hosts, task):
     task_play = {'hosts': hosts,
                  'tasks': [task]}
-    result = run_playbook([task_play])
+    return run_playbook(auth_vars, [task_play])
 
-def run_playbook(playbook):
+def run_playbook(auth_vars, playbook):
     result = []
 
     for play_source in playbook:
         play_source['gather_facts'] = 'no'
 
-        result += _run_play(play_source)
+        result += _run_play(auth_vars, play_source)
 
     return result
 
-def _run_play(play_source):
+def _run_play(auth_vars, play_source):
     inventory = {}
 
-    auth_vars = {'ansible_user': 'yevhen', 'ansible_private_key_file': '~/.ssh/id_rsa'}
+
 
     full_inventory = {'all': {'hosts': play_source['hosts'], 'vars': auth_vars}}
 
@@ -133,4 +133,5 @@ def info_task():
     return task
 
 default_hosts = {"wally098.cit.tu-berlin.de":[], "wally099.cit.tu-berlin.de":[]}
-print (execute_task(default_hosts, info_task()))
+auth_vars = {'ansible_user': 'yevhen', 'ansible_private_key_file': '~/.ssh/id_rsa'}
+print (execute_task(auth_vars, default_hosts, info_task()))
