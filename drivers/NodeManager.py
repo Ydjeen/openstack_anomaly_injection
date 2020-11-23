@@ -8,7 +8,7 @@ from ansible_runner import AnsibleRunner
 class NodeManager:
     def __init__(self, config):
         self._parse_init(config)
-        ansibleExecutor = AnsibleRunner({})
+        ansibleExecutor = AnsibleRunner(config)
         self.container_driver = DockerContainer(ansibleExecutor)
 
     def _parse_init(self, config):
@@ -51,6 +51,10 @@ class NodeManager:
     def stop_container(self, container_id, host=None):
         container = self.get_container(container_id, host)
         return self.container_driver.stop(container)
+
+
+    def restart_container(self, container_name, host=None):
+        return self.container_driver.restart(container_name, host)
 
 
 def unpack_node(node_info):
