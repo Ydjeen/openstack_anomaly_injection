@@ -70,9 +70,6 @@ def run_playbook(auth_vars, playbook):
 
 def _run_play(auth_vars, play_source):
     inventory = {}
-
-
-
     full_inventory = {'all': {'hosts': play_source['hosts'], 'vars': auth_vars}}
 
     temp_dir = tempfile.mkdtemp(prefix='temp_files')
@@ -133,5 +130,5 @@ def info_task():
     return task
 
 default_hosts = {"wally098.cit.tu-berlin.de":[], "wally099.cit.tu-berlin.de":[]}
-auth_vars = {'ansible_user': 'yevhen', 'ansible_private_key_file': '~/.ssh/id_rsa'}
+auth_vars = {'ansible_user': 'pilijevski', 'ansible_private_key_file': '~/.ssh/id_rsa'}
 print (execute_task(auth_vars, default_hosts, info_task()))
