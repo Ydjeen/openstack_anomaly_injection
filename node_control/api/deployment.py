@@ -1,6 +1,7 @@
-class Cluster:
-    def __init__(self, nodes, cluster_info=None):
+class Deployment:
+    def __init__(self, nodes, driver, cluster_info=None):
         self.nodes = nodes
+        self.driver = driver
         self.cluster_info = cluster_info
 
     @property
@@ -14,5 +15,4 @@ class Cluster:
         return self.nodes[item]
 
     def get_ips(self):
-        return [host.ip for host in self.nodes]
-
+        return [host for host in self.nodes.keys()]

@@ -8,28 +8,27 @@ import shlex
 import yaml
 from oslo_concurrency import processutils
 
-from openstack_discovery import AnsibleExecutionRecord
-
 STATUS_OK = 'OK'
 STATUS_FAILED = 'FAILED'
 STATUS_UNREACHABLE = 'UNREACHABLE'
 STATUS_SKIPPED = 'SKIPPED'
 
+AnsibleExecutionRecord = collections.namedtuple(
+    'AnsibleExecutionRecord', ['host', 'status', 'task', 'payload'])
+
+
 LOG = logging.getLogger(__name__)
 
+
 class AnsibleRunner:
-
-
     AnsibleExecutionRecord = collections.namedtuple(
         'AnsibleExecutionRecord', ['host', 'status', 'task', 'payload'])
 
-    def __init__(self, config):
-        self.config = config
-        pass
+    def __init__(self, auth_vars):
+        self.auth_vars = auth_vars
 
-    def _run_play(self, auth_vars, play_source):
-        inventory = {}
-        full_inventory = {'all': {'hosts': play_source['hosts'], 'vars': auth_vars}}
+    def _run_play(self, play_source):
+        full_inventory = {'all': {'hosts': play_source['hosts'], 'vars': self.auth_vars}}
 
         temp_dir = tempfile.mkdtemp(prefix='temp_files')
         inventory_file_name = f'{temp_dir}/inventory'
@@ -70,6 +69,7 @@ class AnsibleRunner:
         for h, hv in h.items():
             if hv.get('unreachable'):
                 status = STATUS_UNREACHABLE
+                raise Exception("Host %s is %s" % (h, status))
             elif hv.get('failed'):
                 status = STATUS_FAILED
             else:
@@ -80,13 +80,13 @@ class AnsibleRunner:
 
         return recs
 
-    def _run_playbook(self, auth_vars, playbook):
+    def _run_playbook(self, playbook):
         result = []
 
         for play_source in playbook:
             play_source['gather_facts'] = 'no'
 
-            result += self._run_play(auth_vars, play_source)
+            result += self._run_play(play_source)
 
         return result
 
@@ -96,4 +96,4 @@ class AnsibleRunner:
             hosts_dictionary[host] = []
         task_play = {'hosts': hosts_dictionary,
                      'tasks': [task]}
-        return self._run_playbook(self.config, [task_play])
+        return self._run_playbook([task_play])

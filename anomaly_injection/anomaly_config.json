@@ -1,0 +1,24 @@
+{
+  "cloud_config": {
+    "ansible": {
+      "user": "pilijevski",
+      "private_key_file": "~/.ssh/id_rsa"
+    },
+    "hosts": [
+      "wally098.cit.tu-berlin.de"]
+  },
+  "anomaly": {
+    "name": "pause",
+    "params": {
+      "delay": "10",
+      "duration": "10"
+    },
+    "targets": [
+      {
+        "type": "container",
+        "host": "wally098.cit.tu-berlin.de",
+        "id": "ca7395888d12930634866992d7b0a88cb39767d32f72bd705eb0f364251e1550"
+      }
+    ]
+  }
+}

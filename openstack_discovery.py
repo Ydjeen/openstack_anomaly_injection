@@ -8,19 +8,12 @@ import shlex
 
 import yaml
 
-import ansible_runner
+from node_control import ansible_runner
 
 from oslo_concurrency import processutils
 
 LOG = logging.getLogger(__name__)
 
-STATUS_OK = 'OK'
-STATUS_FAILED = 'FAILED'
-STATUS_UNREACHABLE = 'UNREACHABLE'
-STATUS_SKIPPED = 'SKIPPED'
-
-AnsibleExecutionRecord = collections.namedtuple(
-    'AnsibleExecutionRecord', ['host', 'status', 'task', 'payload'])
 
 #depreciated
 def discover_containers():
@@ -121,14 +114,17 @@ def _run_play(auth_vars, play_source):
 
     return recs
 
+
 def info_task():
     task = {
         'docker_host_info': {
             'containers': 'yes'
         },
+        'register': 'result'
     }
     return task
 
 default_hosts = {"wally098.cit.tu-berlin.de":[], "wally099.cit.tu-berlin.de":[]}
 auth_vars = {'ansible_user': 'pilijevski', 'ansible_private_key_file': '~/.ssh/id_rsa'}
 print (execute_task(auth_vars, default_hosts, info_task()))
+# print(discover_containers_ansible_runner())

@@ -1,6 +1,7 @@
 class Container:
 
-    def __init__(self, id, host, image, command, created, status, ports, name, #container_driver, network_driver,
+    def __init__(self, id, host, image, command, created, status, ports, name, container_driver=None,
+                 network_driver=None,
                  *args, **kwargs):
         self.id = id
         self.host = host
@@ -10,8 +11,8 @@ class Container:
         self.status = status
         self.ports = ports
         self.name = name
-        #self.container_driver = container_driver
-        #self.network_driver = network_driver
+        self.container_driver = container_driver
+        self.network_driver = network_driver
 
     def start(self):
         self._check_driver(self.container_driver)
@@ -29,10 +30,17 @@ class Container:
         self._check_driver(self.container_driver)
         self.container_driver.restart(self.name, self.host)
 
+    def stress(self, stressors):
+        self._check_driver(self.container_driver)
+        self.container_driver.stress(self.name, self.host, stressors)
+
     @staticmethod
     def _check_driver(driver):
         if driver is None:
             raise Exception("Driver must be provided in order to use this function")
 
     def __repr__(self):
-        return self.id
+        return self.id[:10]
+
+    def __str__(self):
+        return f"Host: {self.host} | Name: {self.name} | ID: {self.id}"

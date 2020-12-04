@@ -1,3 +1,3 @@
 class NodeController:
-    def __init__(self, nodes):
+    def __init__(self):
         pass
