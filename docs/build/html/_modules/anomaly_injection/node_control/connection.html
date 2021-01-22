@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>anomaly_injection.node_control.connection &mdash; Chaos toolkit 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Chaos toolkit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../_rst/intro.html"> Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../_rst/anomaly_injection/anomaly_injection.html"> Anomaly Injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_rst/anomaly_injection/anomalies/anomalies.html"> Anomalies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/anomaly_injection/anomalies/network/network.html">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/anomaly_injection/anomalies/stress/stress.html">Stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/anomaly_injection/anomalies/system/system.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_rst/node_control/node_control.html"> Node Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/node_control/api.html">Api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/node_control/drivers.html">Drivers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../_rst/contribution.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/contribution.html#implementing-new-anomalies">Implementing new anomalies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/contribution.html#extend-node-control">Extend Node Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/contribution.html#implement-api-methods">Implement API methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_rst/contribution.html#implement-driver-methods">Implement Driver methods</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Chaos toolkit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>anomaly_injection.node_control.connection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for anomaly_injection.node_control.connection</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">.config.config_parser</span> <span class="kn">import</span> <span class="n">CloudConfigParser</span>
+<span class="kn">from</span> <span class="nn">.config.loggers</span> <span class="kn">import</span> <span class="n">log_info</span><span class="p">,</span> <span class="n">log_debug</span>
+<span class="kn">from</span> <span class="nn">.drivers.ansible_runner</span> <span class="kn">import</span> <span class="n">AnsibleRunner</span>
+<span class="kn">from</span> <span class="nn">.drivers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.api</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="CloudConnection"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection">[docs]</a><span class="k">class</span> <span class="nc">CloudConnection</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This class serves as a connection to the openstack deployment.</span>
+
+<span class="sd">        :ivar ansible: AnsibleRunner object which serves as an interface for running Ansible tasks on the target</span>
+<span class="sd">        deployment.</span>
+<span class="sd">        :type ansible:class AnsibleRunner:</span>
+<span class="sd">        :ivar hosts: Dictionary containing the hosts on the deployment ( Key-&gt;value = host_ip-&gt; host_object)</span>
+<span class="sd">        :type hosts: dict</span>
+<span class="sd">        :ivar cluster: Object representing the cluster.</span>
+<span class="sd">        :type cluster: class: `AnsibleRunner`</span>
+<span class="sd">        :ivar network_d: :class:`.drivers.NetworkDriver` for performing networking tasks on the deployment.</span>
+<span class="sd">        :type network_d: class:`.drivers.NetworkDriver`</span>
+<span class="sd">        :ivar cont_d: :class:`.drivers.DockerContainer` driver for performing container related tasks on the deployment.</span>
+<span class="sd">        :type cont_d: class:`.drivers.DockerContainer`</span>
+<span class="sd">        :ivar host_d: :class:`.drivers.HostDriver` for performing  tasks on the hosts.</span>
+<span class="sd">        :type host_d: :class:`.drivers.HostDriver`</span>
+<span class="sd">        :ivar cloud_d: :class:`.drivers.DeploymentDriver`  for performing tasks on the deployment.</span>
+<span class="sd">        :type cloud_d: class:`.drivers.DeploymentDriver`</span>
+<span class="sd">        :param config: Json configuration for the deployment. See cloud_config.json for example.</span>
+<span class="sd">        :type config: dict</span>
+<span class="sd">        :param connect:  Whether to connect to the deployment on object creation.</span>
+<span class="sd">        :type connect: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">connect</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ansible</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cluster</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">network_d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cont_d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host_d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_d</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_parse_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_drivers</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">connect</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_init_drivers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">network_d</span> <span class="o">=</span> <span class="n">NetworkDriver</span><span class="p">(</span><span class="n">ansible_runner</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ansible</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cont_d</span> <span class="o">=</span> <span class="n">DockerContainer</span><span class="p">(</span><span class="n">ansible_runner</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ansible</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cloud_d</span> <span class="o">=</span> <span class="n">DeploymentDriver</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ansible</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host_d</span> <span class="o">=</span> <span class="n">HostDriver</span><span class="p">(</span><span class="n">ansible_runner</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ansible</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_parse_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">CloudConfigParser</span><span class="p">()</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ansible</span> <span class="o">=</span> <span class="n">AnsibleRunner</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;ansible&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;hosts&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="CloudConnection.verify"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.verify">[docs]</a>    <span class="k">def</span> <span class="nf">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="CloudConnection.connect"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.connect">[docs]</a>    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Connect to the deployment.</span>
+
+<span class="sd">        :return: Deployment object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># GET THIS FROM ANSIBLE</span>
+        <span class="n">task</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;docker_host_info&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;containers&#39;</span><span class="p">:</span> <span class="s1">&#39;yes&#39;</span>
+            <span class="p">},</span>
+        <span class="p">}</span>
+        <span class="n">log_info</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Discovering hosts&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ansible</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">,</span> <span class="n">task</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;cloud_info.json&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+        <span class="n">hosts</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">log_debug</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Unpacking hosts&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="n">_host</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unpack_host</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+            <span class="n">hosts</span><span class="p">[</span><span class="n">_host</span><span class="o">.</span><span class="n">ip</span><span class="p">]</span> <span class="o">=</span> <span class="n">_host</span>
+        <span class="n">_hosts</span> <span class="o">=</span> <span class="s2">&quot; --- &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">host</span><span class="o">.</span><span class="n">ip</span> <span class="o">+</span> <span class="s2">&quot; containers: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">host</span><span class="o">.</span><span class="n">containers</span><span class="p">))</span> <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
+        <span class="n">log_debug</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Discovered hosts: &quot;</span> <span class="o">+</span> <span class="n">_hosts</span><span class="p">)</span>
+        <span class="n">deployment</span> <span class="o">=</span> <span class="n">Deployment</span><span class="p">(</span><span class="n">hosts</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cloud_d</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cluster</span> <span class="o">=</span> <span class="n">deployment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="n">hosts</span>
+        <span class="k">return</span> <span class="n">deployment</span></div>
+
+<div class="viewcode-block" id="CloudConnection.list_containers"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.list_containers">[docs]</a>    <span class="k">def</span> <span class="nf">list_containers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Lists the available containers on a target host.</span>
+
+<span class="sd">        :param host: Target host. If &#39;all&#39; lists the containers from all of the hosts on the deployment</span>
+<span class="sd">        :type host: str</span>
+
+<span class="sd">        :return: Dictionary of container objects on the deployment. key-&gt;value = host_ip -&gt; container list.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">log_debug</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Listing containers&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">host</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">host</span><span class="p">,</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="n">list_containers</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">[</span><span class="n">host</span><span class="p">]</span><span class="o">.</span><span class="n">list_containers</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="CloudConnection.list_hosts"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.list_hosts">[docs]</a>    <span class="k">def</span> <span class="nf">list_hosts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        List hosts on the deployment</span>
+
+<span class="sd">        :return: Available hosts.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CloudConnection.list_networks"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.list_networks">[docs]</a>    <span class="k">def</span> <span class="nf">list_networks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="CloudConnection.get_host"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.get_host">[docs]</a>    <span class="k">def</span> <span class="nf">get_host</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the object of a target host</span>
+
+<span class="sd">        :return: Host object</span>
+<span class="sd">        :rtype: :class:`.api.Host`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">host</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;host </span><span class="si">%s</span><span class="s2"> not found on cluster&quot;</span> <span class="o">%</span> <span class="n">host</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">[</span><span class="n">host</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="CloudConnection.execute_ansible"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.execute_ansible">[docs]</a>    <span class="k">def</span> <span class="nf">execute_ansible</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Execute an ansible task on the deployment.</span>
+
+<span class="sd">        :param hosts: List of hosts</span>
+<span class="sd">        :type hosts: list</span>
+<span class="sd">        :param task: Task that needs to be executed</span>
+<span class="sd">        :type task: dict</span>
+
+<span class="sd">        :return: List of Named tuples containing the &#39;host&#39;, &#39;status&#39;, &#39;task&#39; and &#39;payload&#39; in json format.</span>
+<span class="sd">        :rtype: list</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ansible</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">hosts</span><span class="p">,</span> <span class="n">task</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CloudConnection.get_container"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.get_container">[docs]</a>    <span class="k">def</span> <span class="nf">get_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">container_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the object of a target container</span>
+
+<span class="sd">        :param host: Target host IP.</span>
+<span class="sd">        :type host: str</span>
+<span class="sd">        :param container_id:  Container ID</span>
+<span class="sd">        :type container_id: str, optional</span>
+<span class="sd">        :param name: Container name (optional)</span>
+<span class="sd">        :type name: str, optional</span>
+
+<span class="sd">        :return: Requested DockerContainer object</span>
+<span class="sd">        :rtype: :class:`.api.Container`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">host</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Host not found on deployment.&quot;</span><span class="p">)</span>
+        <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hosts</span><span class="p">[</span><span class="n">host</span><span class="p">]</span><span class="o">.</span><span class="n">get_container</span><span class="p">(</span><span class="n">container_id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">container</span></div>
+
+<div class="viewcode-block" id="CloudConnection.get_target"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.get_target">[docs]</a>    <span class="k">def</span> <span class="nf">get_target</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the requested target from the deployment.</span>
+
+<span class="sd">        :param target: Target can be either a &#39;host&#39;, &#39;container&#39;, &#39;deployment&#39; or &#39;network&#39;.</span>
+<span class="sd">        :type target: str</span>
+<span class="sd">        :param host: If the target in on a specific host, then specify hostname if target is &#39;network&#39; or &#39;container&#39;.</span>
+<span class="sd">        :type host: str</span>
+<span class="sd">        :param id:  ID of the target</span>
+<span class="sd">        :type id: str, optional</span>
+<span class="sd">        :param name: Target name</span>
+<span class="sd">        :type name: str, optional</span>
+
+<span class="sd">        :return: Target object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">log_debug</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fetching target </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="s1">&#39;container&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_container</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">target</span> <span class="o">==</span> <span class="s1">&#39;host&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_host</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Target type does not exist&quot;</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_unpack_host</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host_info</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Unpack the host info into host object</span>
+
+<span class="sd">        :param host_info: Information about the host</span>
+<span class="sd">        :type host_info: NamedTuple</span>
+
+<span class="sd">        :return: Target object</span>
+<span class="sd">        :rtype: :class:`.api.Host`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">host</span> <span class="o">=</span> <span class="n">host_info</span><span class="o">.</span><span class="n">host</span>
+        <span class="n">host_data</span> <span class="o">=</span> <span class="n">host_info</span><span class="o">.</span><span class="n">payload</span>
+        <span class="n">containers</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">log_debug</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unpacking containers for host </span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">container_info</span> <span class="ow">in</span> <span class="n">host_data</span><span class="p">[</span><span class="s1">&#39;containers&#39;</span><span class="p">]:</span>
+            <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unpack_container</span><span class="p">(</span><span class="n">container_info</span><span class="p">,</span> <span class="n">host</span><span class="p">)</span>
+            <span class="n">containers</span><span class="p">[</span><span class="n">container</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">container</span>
+        <span class="n">host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">ip</span><span class="o">=</span><span class="n">host</span><span class="p">,</span> <span class="n">containers</span><span class="o">=</span><span class="n">containers</span><span class="p">,</span> <span class="n">host_info</span><span class="o">=</span><span class="n">host_info</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">host_d</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">host</span>
+
+    <span class="k">def</span> <span class="nf">_unpack_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">container_info</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Unpack the container info into host object</span>
+
+<span class="sd">        :param container_info:  Information about the container</span>
+<span class="sd">        :type container_info: NamedTuple</span>
+<span class="sd">        :param host: Host of the container.</span>
+<span class="sd">        :type host: str</span>
+
+<span class="sd">        :return: Container object</span>
+<span class="sd">        :rtype: :class:`.api.Container`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;host&quot;</span><span class="p">:</span> <span class="n">host</span><span class="p">,</span> <span class="s2">&quot;container_driver&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cont_d</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">container_info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Names&quot;</span><span class="p">:</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">val</span>
+
+        <span class="n">container</span> <span class="o">=</span> <span class="n">Container</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">container</span>
+
+<div class="viewcode-block" id="CloudConnection.perform_action"><a class="viewcode-back" href="../../../_rst/node_control/node_control.html#anomaly_injection.node_control.connection.CloudConnection.perform_action">[docs]</a>    <span class="k">def</span> <span class="nf">perform_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform an action on the deployment. This function is used by the CLI.</span>
+
+<span class="sd">        :param action:  Target action</span>
+<span class="sd">        :type action: str</span>
+<span class="sd">        :param target: Host of the container.</span>
+<span class="sd">        :type target: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">actions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;list&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_list_action</span><span class="p">}</span>
+        <span class="n">_action</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_action</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Action </span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2"> is not supported.&quot;</span><span class="p">)</span>
+        <span class="c1"># noinspection PyArgumentList</span>
+        <span class="k">return</span> <span class="n">_action</span><span class="p">(</span><span class="n">target</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_list_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">target</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;container&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_containers</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">target</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;node&quot;</span> <span class="ow">or</span> <span class="n">target</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;deployment&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_hosts</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">target</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;network&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_networks</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Invalid target&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, cit.tu-berlin.de.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+</style>
+
+
+</body>
+</html>

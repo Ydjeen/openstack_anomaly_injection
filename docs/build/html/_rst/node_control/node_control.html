@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Node control &mdash; Chaos toolkit 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Node control api" href="api.html" />
+    <link rel="prev" title="System anomalies" href="../anomaly_injection/anomalies/system/system.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Chaos toolkit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html"> Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../anomaly_injection/anomaly_injection.html"> Anomaly Injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anomaly_injection/anomalies/anomalies.html"> Anomalies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anomaly_injection/anomalies/network/network.html">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anomaly_injection/anomalies/stress/stress.html">Stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anomaly_injection/anomalies/system/system.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"> Node Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html">Api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers.html">Drivers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribution.html#implementing-new-anomalies">Implementing new anomalies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution.html#extend-node-control">Extend Node Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution.html#implement-api-methods">Implement API methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribution.html#implement-driver-methods">Implement Driver methods</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Chaos toolkit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Node control</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/_rst/node_control/node_control.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="Node control api" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../anomaly_injection/anomalies/system/system.html" class="btn btn-neutral float-left" title="System anomalies" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="node-control">
+<h1>Node control<a class="headerlink" href="#node-control" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="module-anomaly_injection.node_control.connection">
+<span id="connection"></span><h2>Connection<a class="headerlink" href="#module-anomaly_injection.node_control.connection" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="anomaly_injection.node_control.connection.CloudConnection">
+<em class="property">class </em><code class="sig-name descname">CloudConnection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">config</span></em>, <em class="sig-param"><span class="n">connect</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class serves as a connection to the openstack deployment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>ansible</strong> – AnsibleRunner object which serves as an interface for running Ansible tasks on the target</p>
+</dd>
+</dl>
+<p>deployment.
+:type ansible:class AnsibleRunner:
+:ivar hosts: Dictionary containing the hosts on the deployment ( Key-&gt;value = host_ip-&gt; host_object)
+:type hosts: dict
+:ivar cluster: Object representing the cluster.
+:type cluster: class: <cite>AnsibleRunner</cite>
+:ivar network_d: <code class="xref py py-class docutils literal notranslate"><span class="pre">drivers.NetworkDriver</span></code> for performing networking tasks on the deployment.
+:type network_d: class:<cite>.drivers.NetworkDriver</cite>
+:ivar cont_d: <code class="xref py py-class docutils literal notranslate"><span class="pre">drivers.DockerContainer</span></code> driver for performing container related tasks on the deployment.
+:type cont_d: class:<cite>.drivers.DockerContainer</cite>
+:ivar host_d: <code class="xref py py-class docutils literal notranslate"><span class="pre">drivers.HostDriver</span></code> for performing  tasks on the hosts.
+:type host_d: <code class="xref py py-class docutils literal notranslate"><span class="pre">drivers.HostDriver</span></code>
+:ivar cloud_d: <code class="xref py py-class docutils literal notranslate"><span class="pre">drivers.DeploymentDriver</span></code>  for performing tasks on the deployment.
+:type cloud_d: class:<cite>.drivers.DeploymentDriver</cite>
+:param config: Json configuration for the deployment. See cloud_config.json for example.
+:type config: dict
+:param connect:  Whether to connect to the deployment on object creation.
+:type connect: bool</p>
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.connect">
+<code class="sig-name descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to the deployment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Deployment object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.execute_ansible">
+<code class="sig-name descname">execute_ansible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hosts</span></em>, <em class="sig-param"><span class="n">task</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.execute_ansible"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.execute_ansible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute an ansible task on the deployment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hosts</strong> (<em>list</em>) – List of hosts</p></li>
+<li><p><strong>task</strong> (<em>dict</em>) – Task that needs to be executed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of Named tuples containing the ‘host’, ‘status’, ‘task’ and ‘payload’ in json format.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.get_container">
+<code class="sig-name descname">get_container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">container_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.get_container"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.get_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the object of a target container</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – Target host IP.</p></li>
+<li><p><strong>container_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Container ID</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Container name (optional)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Requested DockerContainer object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="api.html#anomaly_injection.node_control.api.Container" title="anomaly_injection.node_control.api.Container"><code class="xref py py-class docutils literal notranslate"><span class="pre">api.Container</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.get_host">
+<code class="sig-name descname">get_host</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.get_host"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.get_host" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the object of a target host</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Host object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="api.html#anomaly_injection.node_control.api.Host" title="anomaly_injection.node_control.api.Host"><code class="xref py py-class docutils literal notranslate"><span class="pre">api.Host</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.get_target">
+<code class="sig-name descname">get_target</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.get_target"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.get_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the requested target from the deployment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<em>str</em>) – Target can be either a ‘host’, ‘container’, ‘deployment’ or ‘network’.</p></li>
+<li><p><strong>host</strong> (<em>str</em>) – If the target in on a specific host, then specify hostname if target is ‘network’ or ‘container’.</p></li>
+<li><p><strong>id</strong> (<em>str</em><em>, </em><em>optional</em>) – ID of the target</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Target name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Target object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.list_containers">
+<code class="sig-name descname">list_containers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">'all'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.list_containers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.list_containers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the available containers on a target host.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>host</strong> (<em>str</em>) – Target host. If ‘all’ lists the containers from all of the hosts on the deployment</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of container objects on the deployment. key-&gt;value = host_ip -&gt; container list.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.list_hosts">
+<code class="sig-name descname">list_hosts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.list_hosts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.list_hosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>List hosts on the deployment</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Available hosts.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.list_networks">
+<code class="sig-name descname">list_networks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.list_networks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.list_networks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.perform_action">
+<code class="sig-name descname">perform_action</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em>, <em class="sig-param"><span class="n">target</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.perform_action"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.perform_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform an action on the deployment. This function is used by the CLI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> (<em>str</em>) – Target action</p></li>
+<li><p><strong>target</strong> (<em>str</em>) – Host of the container.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anomaly_injection.node_control.connection.CloudConnection.verify">
+<code class="sig-name descname">verify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/anomaly_injection/node_control/connection.html#CloudConnection.verify"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#anomaly_injection.node_control.connection.CloudConnection.verify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="api.html" class="btn btn-neutral float-right" title="Node control api" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../anomaly_injection/anomalies/system/system.html" class="btn btn-neutral float-left" title="System anomalies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, cit.tu-berlin.de.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+</style>
+
+
+</body>
+</html>

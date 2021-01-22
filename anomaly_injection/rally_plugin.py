@@ -1,4 +1,4 @@
-from .AnomalyInjector import AnomalyInjector
+from .injector import AnomalyInjector
 from rally.common import logging
 from rally import consts
 from rally.task import hook

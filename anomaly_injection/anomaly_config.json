@@ -1,13 +1,15 @@
 {
   "cloud_config": {
     "ansible": {
-      "user": "pilijevski",
+      "ansible_user": "pilijevski",
       "private_key_file": "~/.ssh/id_rsa"
     },
     "hosts": [
-      "wally098.cit.tu-berlin.de"]
+      "wally098.cit.tu-berlin.de",
+      "wally099.cit.tu-berlin.de"
+    ]
   },
-  "anomaly": {
+  "anomalies": [{
     "name": "pause",
     "params": {
       "delay": "10",
@@ -17,8 +19,23 @@
       {
         "type": "container",
         "host": "wally098.cit.tu-berlin.de",
-        "id": "ca7395888d12930634866992d7b0a88cb39767d32f72bd705eb0f364251e1550"
+        "id": "1174a29bff7e5d6b1aedd"
+      }
+    ]
+  },
+    {
+    "name": "stress",
+    "params": {
+      "stressors": "--cpu 2 -t 60s"
+    },
+    "targets": [
+      {
+        "type": "host",
+        "id": "heat_engine",
+
+        "host": "wally098.cit.tu-berlin.de"
       }
     ]
   }
+    ]
 }

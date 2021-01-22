@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>anomaly_injection.node_control.drivers.ansible_runner &mdash; Chaos toolkit 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> Chaos toolkit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../_rst/intro.html"> Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../_rst/anomaly_injection/anomaly_injection.html"> Anomaly Injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../_rst/anomaly_injection/anomalies/anomalies.html"> Anomalies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/anomaly_injection/anomalies/network/network.html">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/anomaly_injection/anomalies/stress/stress.html">Stress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/anomaly_injection/anomalies/system/system.html">System</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../_rst/node_control/node_control.html"> Node Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/node_control/api.html">Api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/node_control/drivers.html">Drivers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../_rst/contribution.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/contribution.html#implementing-new-anomalies">Implementing new anomalies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/contribution.html#extend-node-control">Extend Node Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/contribution.html#implement-api-methods">Implement API methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../_rst/contribution.html#implement-driver-methods">Implement Driver methods</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Chaos toolkit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+      <li>anomaly_injection.node_control.drivers.ansible_runner</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for anomaly_injection.node_control.drivers.ansible_runner</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">shlex</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">from</span> <span class="nn">oslo_concurrency</span> <span class="kn">import</span> <span class="n">processutils</span>
+
+<span class="n">STATUS_OK</span> <span class="o">=</span> <span class="s1">&#39;OK&#39;</span>
+<span class="n">STATUS_FAILED</span> <span class="o">=</span> <span class="s1">&#39;FAILED&#39;</span>
+<span class="n">STATUS_UNREACHABLE</span> <span class="o">=</span> <span class="s1">&#39;UNREACHABLE&#39;</span>
+<span class="n">STATUS_SKIPPED</span> <span class="o">=</span> <span class="s1">&#39;SKIPPED&#39;</span>
+
+<span class="n">log_info</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;infoLog&#39;</span><span class="p">)</span>
+<span class="n">log_error</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;errorLog&#39;</span><span class="p">)</span>
+<span class="n">log_debug</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;debuggerLog&#39;</span><span class="p">)</span>
+<span class="n">log_status</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;statusLog&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="AnsibleRunner"><a class="viewcode-back" href="../../../../_rst/node_control/drivers.html#anomaly_injection.node_control.drivers.ansible_runner.AnsibleRunner">[docs]</a><span class="k">class</span> <span class="nc">AnsibleRunner</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Ansible Runner is the interface between the library and the deployment. The library performs ansible tasks in</span>
+<span class="sd">    order to execute commands. This class builds an ansible playbook file and runs it on a target host.</span>
+
+<span class="sd">    :param auth_vars:  Authentication variables for connecting to target host. View cloud_config.json for more info.</span>
+<span class="sd">    :type auth_vars: dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">AnsibleExecutionRecord</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span>
+        <span class="s1">&#39;AnsibleExecutionRecord&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;payload&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth_vars</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_vars</span> <span class="o">=</span> <span class="n">auth_vars</span>
+
+    <span class="k">def</span> <span class="nf">_run_play</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">play_source</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a playbook file and runs it against target hosts.</span>
+
+<span class="sd">        :param play_source: Dictionary containing the tasks and the hosts that ansible needs to run on.</span>
+<span class="sd">        :type play_source: dict</span>
+
+<span class="sd">        :returns: Named tuple containing the &#39;host&#39;, &#39;status&#39;, &#39;task&#39; and &#39;payload&#39; in json format.</span>
+<span class="sd">        :rtype: AnsibleExecutionRecord</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">full_inventory</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;all&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;hosts&#39;</span><span class="p">:</span> <span class="n">play_source</span><span class="p">[</span><span class="s1">&#39;hosts&#39;</span><span class="p">],</span> <span class="s1">&#39;vars&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_vars</span><span class="p">}}</span>
+
+        <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;temp_files&#39;</span><span class="p">)</span>
+        <span class="n">inventory_file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">temp_dir</span><span class="si">}</span><span class="s1">/inventory&#39;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">inventory_file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+            <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">full_inventory</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">playbook_file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="s1">&#39;playbook&#39;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">inventory_file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+            <span class="n">cnt</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_dump</span><span class="p">(</span><span class="n">full_inventory</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">fd</span><span class="p">)</span>
+            <span class="n">log_debug</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Inventory:</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">cnt</span><span class="p">)</span>
+
+        <span class="n">play</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;hosts&#39;</span><span class="p">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;gather_facts&#39;</span><span class="p">:</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;become&#39;</span><span class="p">:</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;tasks&#39;</span><span class="p">:</span> <span class="n">play_source</span><span class="p">[</span><span class="s1">&#39;tasks&#39;</span><span class="p">],</span>
+        <span class="p">}</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">playbook_file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+            <span class="n">cnt</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_dump</span><span class="p">([</span><span class="n">play</span><span class="p">],</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">fd</span><span class="p">)</span>
+            <span class="n">log_debug</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Playbook:</span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">cnt</span><span class="p">)</span>
+
+        <span class="c1"># TODO: this is a workaround</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i </span><span class="si">%(inventory)s</span><span class="s1"> </span><span class="si">%(playbook)s</span><span class="s1">&#39;</span> <span class="o">%</span>
+               <span class="p">{</span><span class="s1">&#39;inventory&#39;</span><span class="p">:</span> <span class="n">inventory_file_name</span><span class="p">,</span>
+                <span class="s1">&#39;playbook&#39;</span><span class="p">:</span> <span class="n">playbook_file_name</span><span class="p">})</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Executing </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">cmd</span><span class="p">)</span>
+
+        <span class="n">command_stdout</span><span class="p">,</span> <span class="n">command_stderr</span> <span class="o">=</span> <span class="n">processutils</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="o">*</span><span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">cmd</span><span class="p">))</span>
+
+        <span class="n">d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">command_stdout</span><span class="p">[</span><span class="n">command_stdout</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">):])</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;plays&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;tasks&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;hosts&#39;</span><span class="p">]</span>
+        <span class="n">recs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">h</span><span class="p">,</span> <span class="n">hv</span> <span class="ow">in</span> <span class="n">h</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">hv</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;unreachable&#39;</span><span class="p">):</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="n">STATUS_UNREACHABLE</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Host </span><span class="si">%s</span><span class="s2"> is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">status</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">hv</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;failed&#39;</span><span class="p">):</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="n">STATUS_FAILED</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="n">STATUS_OK</span>
+
+            <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">AnsibleExecutionRecord</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                                            <span class="n">payload</span><span class="o">=</span><span class="n">hv</span><span class="p">)</span>
+            <span class="n">recs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">recs</span>
+
+    <span class="k">def</span> <span class="nf">_run_playbook</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">playbook</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">play_source</span> <span class="ow">in</span> <span class="n">playbook</span><span class="p">:</span>
+            <span class="n">play_source</span><span class="p">[</span><span class="s1">&#39;gather_facts&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;no&#39;</span>
+
+            <span class="n">result</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_play</span><span class="p">(</span><span class="n">play_source</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+<div class="viewcode-block" id="AnsibleRunner.execute"><a class="viewcode-back" href="../../../../_rst/node_control/drivers.html#anomaly_injection.node_control.drivers.ansible_runner.AnsibleRunner.execute">[docs]</a>    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hosts</span><span class="p">,</span> <span class="n">task</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Execute a task on target hosts</span>
+
+<span class="sd">        :param hosts:  List of hosts</span>
+<span class="sd">        :type hosts: list</span>
+
+<span class="sd">        :param task:  Task that needs to be executed</span>
+<span class="sd">        :type task: dict</span>
+
+<span class="sd">        :returns: List of Named tuples containing the &#39;host&#39;, &#39;status&#39;, &#39;task&#39; and &#39;payload&#39; in json format.</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">hosts_dictionary</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="n">hosts</span><span class="p">:</span>
+            <span class="n">hosts_dictionary</span><span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">task_play</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hosts&#39;</span><span class="p">:</span> <span class="n">hosts_dictionary</span><span class="p">,</span>
+                     <span class="s1">&#39;tasks&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">task</span><span class="p">]}</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_playbook</span><span class="p">([</span><span class="n">task_play</span><span class="p">])</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, cit.tu-berlin.de.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+</style>
+
+
+</body>
+</html>
