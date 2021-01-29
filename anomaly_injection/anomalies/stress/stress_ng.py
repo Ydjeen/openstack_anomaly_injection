@@ -15,7 +15,7 @@ class StressNgAnomaly(Anomaly):
     """
 
     def __init__(self, params, target, conn, *args, **kwargs):
-        supported_targets = ["deployment", "container", "host"]
+        supported_targets = ["deployment", "container", "host", "node"]
         name = "Stress-ng"
         super().__init__(params, target, conn, supported_targets=supported_targets, name=name)
 

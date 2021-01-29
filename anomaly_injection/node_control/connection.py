@@ -177,6 +177,9 @@ class CloudConnection:
             return self.get_container(host, id, name)
         elif target == 'host':
             return self.get_host(host)
+        elif target == 'node':
+            print("the host is ", self.hosts)
+            return self.get_host(host)
         else:
             raise Exception("Target type does not exist")
 

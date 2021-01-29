@@ -1,5 +1,8 @@
 import argparse
-from .loggers import log_debug
+
+import logging
+
+log_debug = logging.getLogger("debugLog")
 
 _available_commands = ["list"]
 
@@ -13,13 +16,15 @@ def get_parser(parent=None):
     if not parent:
         admin = argparse.ArgumentParser(description='Deployment control', prog='deployment control',
                                         parents=[conf_file_parser])
+        admin.add_argument("--debug", help="Run command in debug mode", dest="debug", action='store_true')
+
     else:
         admin = parent.add_parser('admin', help='Deployment control')
 
     # Admin commands
     admin_parser = argparse.ArgumentParser(add_help=False)
     admin_parser.add_argument("list", help="List %(prog)ss")
-    admin_parser.add_argument('--host', help='Hostname or ip of target', metavar='[hostname]', required=True,
+    admin_parser.add_argument('--host', help='Hostname or ip of target', metavar='[hostname]',
                               dest='target_host', default='all')
     admin_parser.add_argument('--config-path', help='Path to config file', metavar='[path]',
                               dest="config_path", action='store')

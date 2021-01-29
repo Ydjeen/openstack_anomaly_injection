@@ -7,6 +7,7 @@ import tempfile
 
 import yaml
 from oslo_concurrency import processutils
+from oslo_concurrency.processutils import ProcessExecutionError
 
 STATUS_OK = 'OK'
 STATUS_FAILED = 'FAILED'
@@ -55,7 +56,6 @@ class AnsibleRunner:
             cnt = yaml.safe_dump(full_inventory, default_flow_style=False)
             print(cnt, file=fd)
             log_debug.debug('Inventory:\n%s', cnt)
-
         play = {
             'hosts': 'all',
             'gather_facts': 'no',
@@ -74,9 +74,11 @@ class AnsibleRunner:
                 'playbook': playbook_file_name})
 
         logging.info('Executing %s' % cmd)
-
-        command_stdout, command_stderr = processutils.execute(
-            *shlex.split(cmd))
+        try:
+            command_stdout, command_stderr = processutils.execute(
+                *shlex.split(cmd))
+        except ProcessExecutionError as err:
+            command_stdout, command_stderr = err.stdout, err.stderr
 
         d = json.loads(command_stdout[command_stdout.find('{'):])
         h = d['plays'][0]['tasks'][0]['hosts']

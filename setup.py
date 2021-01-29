@@ -1,17 +1,22 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name='chaos_toolkit',
-    version='0.0.1',
-    packages=['docs', 'docs.source', 'anomaly_injection', 'anomaly_injection.config',
-              'anomaly_injection.config.argparser', 'anomaly_injection.anomalies', 'anomaly_injection.anomalies.stress',
-              'anomaly_injection.anomalies.system', 'anomaly_injection.anomalies.network',
-              'anomaly_injection.node_control', 'anomaly_injection.node_control.api',
-              'anomaly_injection.node_control.config', 'anomaly_injection.node_control.drivers'],
-    package_dir={'': 'openstack_anomaly_injection'},
+    name='anomaly_injection',
+    version='0.1',
+    packages=find_packages(exclude=('tests', 'docs')),
+    package_dir={'': '../openstack_anomaly_injection'},
     url='',
-    license='',
+    license='non',
     author='petar',
     author_email='petar.ilijevski@campus.tu-berlin.de',
-    description=''
+    description='Anomaly injection toolkit for openstack',
+    python_requires='>=3.6',
+    entry_points={
+        'console_scripts': ['chaos=anomaly_injection.cli:main'],
+    },
+    package_data={
+        'anomaly_injection.config': ["*.json", "*.ini"],
+        'anomaly_injection.node_control.config': ["*.json", "*.ini"]
+    },
+    include_package_data=True
 )

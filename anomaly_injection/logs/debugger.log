@@ -1,0 +1,729 @@
+2021-01-29 15:17:14 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:17:14 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:17:14 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:17:14 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files4ogxtj_2/inventory /tmp/temp_files4ogxtj_2/playbook
+2021-01-29 15:17:14 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files4ogxtj_2/inventory /tmp/temp_files4ogxtj_2/playbook
+2021-01-29 15:17:23 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files4ogxtj_2/inventory /tmp/temp_files4ogxtj_2/playbook" returned: 0 in 8.268s
+2021-01-29 15:17:23 |  DEBUG |     connection |                  connect | Unpacking hosts
+2021-01-29 15:17:23 |  DEBUG |     connection |             _unpack_host | Unpacking containers for host wally098.cit.tu-berlin.de
+2021-01-29 15:17:23 |  DEBUG |     connection |             _unpack_host | Unpacking containers for host wally099.cit.tu-berlin.de
+2021-01-29 15:17:23 |  DEBUG |     connection |                  connect | Discovered hosts: wally098.cit.tu-berlin.de containers: 39 --- wally099.cit.tu-berlin.de containers: 13
+2021-01-29 15:17:23 |  DEBUG |     connection |               get_target | Fetching target container
+2021-01-29 15:17:23 |  DEBUG |    base_driver |                _run_task | Executing task Stress on hosts wally098.cit.tu-berlin.de
+2021-01-29 15:17:23 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:17:23 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - shell:
+      cmd: dockhack cg_exec heat_engine stress-ng --cpu 8 -t 20s
+
+2021-01-29 15:17:23 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filestlaoya4k/inventory /tmp/temp_filestlaoya4k/playbook
+2021-01-29 15:17:23 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filestlaoya4k/inventory /tmp/temp_filestlaoya4k/playbook
+2021-01-29 15:18:40 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:18:40 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:18:40 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:18:40 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesctsr0hnr/inventory /tmp/temp_filesctsr0hnr/playbook
+2021-01-29 15:18:40 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesctsr0hnr/inventory /tmp/temp_filesctsr0hnr/playbook
+2021-01-29 15:18:40 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesctsr0hnr/inventory /tmp/temp_filesctsr0hnr/playbook" returned: 0 in 0.594s
+2021-01-29 15:19:14 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:19:14 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:19:14 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:19:14 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesj5n17fco/inventory /tmp/temp_filesj5n17fco/playbook
+2021-01-29 15:19:14 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesj5n17fco/inventory /tmp/temp_filesj5n17fco/playbook
+2021-01-29 15:19:15 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesj5n17fco/inventory /tmp/temp_filesj5n17fco/playbook" returned: 0 in 0.589s
+2021-01-29 15:20:18 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:20:34 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:22:42 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:22:44 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:24:29 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:24:29 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:24:29 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:24:29 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files__taybjj/inventory /tmp/temp_files__taybjj/playbook
+2021-01-29 15:24:29 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files__taybjj/inventory /tmp/temp_files__taybjj/playbook
+2021-01-29 15:24:36 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files__taybjj/inventory /tmp/temp_files__taybjj/playbook" returned: 0 in 7.474s
+2021-01-29 15:24:36 |  DEBUG |     connection |                  connect | Unpacking hosts
+2021-01-29 15:24:36 |  DEBUG |     connection |             _unpack_host | Unpacking containers for host wally098.cit.tu-berlin.de
+2021-01-29 15:24:36 |  DEBUG |     connection |             _unpack_host | Unpacking containers for host wally099.cit.tu-berlin.de
+2021-01-29 15:24:36 |  DEBUG |     connection |                  connect | Discovered hosts: wally098.cit.tu-berlin.de containers: 39 --- wally099.cit.tu-berlin.de containers: 13
+2021-01-29 15:24:36 |  DEBUG |     connection |               get_target | Fetching target container
+2021-01-29 15:24:36 |  DEBUG |    base_driver |                _run_task | Executing task Stress on hosts wally098.cit.tu-berlin.de
+2021-01-29 15:24:36 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:24:36 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - shell:
+      cmd: dockhack cg_exec heat_engine stress-ng --cpu 8 -t 20s
+
+2021-01-29 15:24:36 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslgkkhe6a/inventory /tmp/temp_fileslgkkhe6a/playbook
+2021-01-29 15:24:36 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslgkkhe6a/inventory /tmp/temp_fileslgkkhe6a/playbook
+2021-01-29 15:25:02 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslgkkhe6a/inventory /tmp/temp_fileslgkkhe6a/playbook" returned: 0 in 25.723s
+2021-01-29 15:25:02 |  DEBUG |    base_driver |                _run_task | Task Stress executed Successfully
+2021-01-29 15:27:37 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:27:37 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:27:37 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:27:37 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesd8mz8hhq/inventory /tmp/temp_filesd8mz8hhq/playbook
+2021-01-29 15:27:37 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesd8mz8hhq/inventory /tmp/temp_filesd8mz8hhq/playbook
+2021-01-29 15:27:43 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesd8mz8hhq/inventory /tmp/temp_filesd8mz8hhq/playbook" returned: 0 in 6.214s
+2021-01-29 15:28:08 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:28:08 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:28:12 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:28:12 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files300vmauw/inventory /tmp/temp_files300vmauw/playbook
+2021-01-29 15:28:12 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files300vmauw/inventory /tmp/temp_files300vmauw/playbook
+2021-01-29 15:28:42 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:28:42 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:28:42 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:28:42 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileshfban35c/inventory /tmp/temp_fileshfban35c/playbook
+2021-01-29 15:28:42 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileshfban35c/inventory /tmp/temp_fileshfban35c/playbook
+2021-01-29 15:30:30 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:30:30 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:30:30 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:30:30 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesjs1k294d/inventory /tmp/temp_filesjs1k294d/playbook
+2021-01-29 15:30:30 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesjs1k294d/inventory /tmp/temp_filesjs1k294d/playbook
+2021-01-29 15:30:40 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesjs1k294d/inventory /tmp/temp_filesjs1k294d/playbook" reached timeout in 10.012s
+2021-01-29 15:30:54 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:30:54 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:30:54 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:30:54 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filese08k01kq/inventory /tmp/temp_filese08k01kq/playbook
+2021-01-29 15:30:54 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filese08k01kq/inventory /tmp/temp_filese08k01kq/playbook
+2021-01-29 15:31:04 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:31:04 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:31:04 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:31:04 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files7ghzxaa8/inventory /tmp/temp_files7ghzxaa8/playbook
+2021-01-29 15:31:04 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files7ghzxaa8/inventory /tmp/temp_files7ghzxaa8/playbook
+2021-01-29 15:31:58 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:31:58 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:31:58 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:31:58 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesol566hv1/inventory /tmp/temp_filesol566hv1/playbook
+2021-01-29 15:31:58 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesol566hv1/inventory /tmp/temp_filesol566hv1/playbook
+2021-01-29 15:32:37 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:32:37 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:32:37 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:32:37 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesuxmwfyf9/inventory /tmp/temp_filesuxmwfyf9/playbook
+2021-01-29 15:32:37 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesuxmwfyf9/inventory /tmp/temp_filesuxmwfyf9/playbook
+2021-01-29 15:32:43 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesuxmwfyf9/inventory /tmp/temp_filesuxmwfyf9/playbook" returned: 0 in 5.534s
+2021-01-29 15:32:43 |  DEBUG |     connection |                  connect | Unpacking hosts
+2021-01-29 15:32:43 |  DEBUG |     connection |             _unpack_host | Unpacking containers for host wally098.cit.tu-berlin.de
+2021-01-29 15:32:43 |  DEBUG |     connection |             _unpack_host | Unpacking containers for host wally099.cit.tu-berlin.de
+2021-01-29 15:32:43 |  DEBUG |     connection |                  connect | Discovered hosts: wally098.cit.tu-berlin.de containers: 39 --- wally099.cit.tu-berlin.de containers: 13
+2021-01-29 15:32:43 |  DEBUG |     connection |               get_target | Fetching target container
+2021-01-29 15:32:43 |  DEBUG |    base_driver |                _run_task | Executing task Stress on hosts wally098.cit.tu-berlin.de
+2021-01-29 15:32:43 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:32:43 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - shell:
+      cmd: dockhack cg_exec heat_engine stress-ng --cpu 8 -t 20s
+
+2021-01-29 15:32:43 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesasuod0d9/inventory /tmp/temp_filesasuod0d9/playbook
+2021-01-29 15:32:43 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesasuod0d9/inventory /tmp/temp_filesasuod0d9/playbook
+2021-01-29 15:33:08 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesasuod0d9/inventory /tmp/temp_filesasuod0d9/playbook" returned: 0 in 25.658s
+2021-01-29 15:33:08 |  DEBUG |    base_driver |                _run_task | Task Stress executed Successfully
+2021-01-29 15:33:49 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:33:49 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:33:49 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:33:49 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesik5_wari/inventory /tmp/temp_filesik5_wari/playbook
+2021-01-29 15:33:49 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesik5_wari/inventory /tmp/temp_filesik5_wari/playbook
+2021-01-29 15:40:26 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:40:26 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:40:26 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:40:26 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesxkhicrqs/inventory /tmp/temp_filesxkhicrqs/playbook
+2021-01-29 15:40:26 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesxkhicrqs/inventory /tmp/temp_filesxkhicrqs/playbook
+2021-01-29 15:40:26 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesxkhicrqs/inventory /tmp/temp_filesxkhicrqs/playbook" returned: 0 in 0.648s
+2021-01-29 15:41:16 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:41:16 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:41:16 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:41:16 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesvkm7dmr0/inventory /tmp/temp_filesvkm7dmr0/playbook
+2021-01-29 15:41:16 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesvkm7dmr0/inventory /tmp/temp_filesvkm7dmr0/playbook
+2021-01-29 15:41:27 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesvkm7dmr0/inventory /tmp/temp_filesvkm7dmr0/playbook" returned: 4 in 10.674s
+2021-01-29 15:41:27 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesvkm7dmr0/inventory /tmp/temp_filesvkm7dmr0/playbook' failed. Not Retrying.
+2021-01-29 15:42:06 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:42:06 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:42:06 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:42:06 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesb1yor4wg/inventory /tmp/temp_filesb1yor4wg/playbook
+2021-01-29 15:42:06 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesb1yor4wg/inventory /tmp/temp_filesb1yor4wg/playbook
+2021-01-29 15:42:17 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesb1yor4wg/inventory /tmp/temp_filesb1yor4wg/playbook" returned: 4 in 10.639s
+2021-01-29 15:42:17 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesb1yor4wg/inventory /tmp/temp_filesb1yor4wg/playbook' failed. Not Retrying.
+2021-01-29 15:42:29 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:42:29 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:42:29 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:42:29 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesp9zle8ip/inventory /tmp/temp_filesp9zle8ip/playbook
+2021-01-29 15:42:38 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesp9zle8ip/inventory /tmp/temp_filesp9zle8ip/playbook
+2021-01-29 15:42:49 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesp9zle8ip/inventory /tmp/temp_filesp9zle8ip/playbook" returned: 4 in 10.627s
+2021-01-29 15:42:49 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesp9zle8ip/inventory /tmp/temp_filesp9zle8ip/playbook' failed. Not Retrying.
+2021-01-29 15:57:31 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 15:57:31 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 15:57:31 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 15:57:31 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesemaioyfz/inventory /tmp/temp_filesemaioyfz/playbook
+2021-01-29 15:57:31 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesemaioyfz/inventory /tmp/temp_filesemaioyfz/playbook
+2021-01-29 15:57:41 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesemaioyfz/inventory /tmp/temp_filesemaioyfz/playbook" returned: 4 in 10.628s
+2021-01-29 15:57:41 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesemaioyfz/inventory /tmp/temp_filesemaioyfz/playbook' failed. Not Retrying.
+2021-01-29 16:08:47 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'name': 'test'}, 'params': {'duration': '20s', 'delay': '5s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 16:08:47 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:08:47 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:08:47 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesnohja3aa/inventory /tmp/temp_filesnohja3aa/playbook
+2021-01-29 16:09:11 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 'wally098.cit.tu-berlin.de', 'id': '1174a29bff7e'}, 'params': {'duration': '20s', 'stressors': '--cpu 8'}, 'name': 'stress-ng'}
+2021-01-29 16:09:11 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:09:11 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:09:11 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslazi2tcj/inventory /tmp/temp_fileslazi2tcj/playbook
+2021-01-29 16:09:11 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslazi2tcj/inventory /tmp/temp_fileslazi2tcj/playbook
+2021-01-29 16:13:32 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:13:32 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:13:32 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:13:32 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesjxv90w1b/inventory /tmp/temp_filesjxv90w1b/playbook
+2021-01-29 16:13:32 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesjxv90w1b/inventory /tmp/temp_filesjxv90w1b/playbook
+2021-01-29 16:15:51 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:15:51 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:15:51 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:15:51 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileso1z3a_14/inventory /tmp/temp_fileso1z3a_14/playbook
+2021-01-29 16:15:51 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileso1z3a_14/inventory /tmp/temp_fileso1z3a_14/playbook
+2021-01-29 16:16:03 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileso1z3a_14/inventory /tmp/temp_fileso1z3a_14/playbook" returned: 4 in 11.323s
+2021-01-29 16:16:03 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileso1z3a_14/inventory /tmp/temp_fileso1z3a_14/playbook' failed. Not Retrying.
+2021-01-29 16:16:55 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:16:55 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:16:55 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:16:55 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslttb36mc/inventory /tmp/temp_fileslttb36mc/playbook
+2021-01-29 16:16:55 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslttb36mc/inventory /tmp/temp_fileslttb36mc/playbook
+2021-01-29 16:17:06 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslttb36mc/inventory /tmp/temp_fileslttb36mc/playbook" returned: 4 in 11.264s
+2021-01-29 16:17:06 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_fileslttb36mc/inventory /tmp/temp_fileslttb36mc/playbook' failed. Not Retrying.
+2021-01-29 16:17:37 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:17:37 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:17:37 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:17:37 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesqa4u78q4/inventory /tmp/temp_filesqa4u78q4/playbook
+2021-01-29 16:17:37 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesqa4u78q4/inventory /tmp/temp_filesqa4u78q4/playbook
+2021-01-29 16:17:48 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesqa4u78q4/inventory /tmp/temp_filesqa4u78q4/playbook" returned: 4 in 11.277s
+2021-01-29 16:17:48 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesqa4u78q4/inventory /tmp/temp_filesqa4u78q4/playbook' failed. Not Retrying.
+2021-01-29 16:35:50 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:35:50 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:35:50 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:35:50 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filess013si4o/inventory /tmp/temp_filess013si4o/playbook
+2021-01-29 16:35:50 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filess013si4o/inventory /tmp/temp_filess013si4o/playbook
+2021-01-29 16:36:01 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filess013si4o/inventory /tmp/temp_filess013si4o/playbook" returned: 4 in 11.384s
+2021-01-29 16:36:01 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filess013si4o/inventory /tmp/temp_filess013si4o/playbook' failed. Not Retrying.
+2021-01-29 16:36:30 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:36:30 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:36:30 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:36:30 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesn58fqu_3/inventory /tmp/temp_filesn58fqu_3/playbook
+2021-01-29 16:36:30 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesn58fqu_3/inventory /tmp/temp_filesn58fqu_3/playbook
+2021-01-29 16:36:41 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesn58fqu_3/inventory /tmp/temp_filesn58fqu_3/playbook" returned: 4 in 11.256s
+2021-01-29 16:36:41 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesn58fqu_3/inventory /tmp/temp_filesn58fqu_3/playbook' failed. Not Retrying.
+2021-01-29 16:36:55 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:36:55 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:36:55 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:36:55 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesksj0kaqx/inventory /tmp/temp_filesksj0kaqx/playbook
+2021-01-29 16:36:55 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesksj0kaqx/inventory /tmp/temp_filesksj0kaqx/playbook
+2021-01-29 16:37:06 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesksj0kaqx/inventory /tmp/temp_filesksj0kaqx/playbook" returned: 4 in 11.280s
+2021-01-29 16:37:06 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesksj0kaqx/inventory /tmp/temp_filesksj0kaqx/playbook' failed. Not Retrying.
+2021-01-29 16:37:36 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:37:36 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:37:36 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:37:36 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesgf8lvaw5/inventory /tmp/temp_filesgf8lvaw5/playbook
+2021-01-29 16:37:36 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesgf8lvaw5/inventory /tmp/temp_filesgf8lvaw5/playbook
+2021-01-29 16:37:47 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesgf8lvaw5/inventory /tmp/temp_filesgf8lvaw5/playbook" returned: 4 in 11.251s
+2021-01-29 16:37:47 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesgf8lvaw5/inventory /tmp/temp_filesgf8lvaw5/playbook' failed. Not Retrying.
+2021-01-29 16:39:24 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:39:24 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:39:24 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:39:24 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files9qa255la/inventory /tmp/temp_files9qa255la/playbook
+2021-01-29 16:39:24 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files9qa255la/inventory /tmp/temp_files9qa255la/playbook
+2021-01-29 16:39:35 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files9qa255la/inventory /tmp/temp_files9qa255la/playbook" returned: 4 in 11.246s
+2021-01-29 16:39:35 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files9qa255la/inventory /tmp/temp_files9qa255la/playbook' failed. Not Retrying.
+2021-01-29 16:43:46 |  DEBUG |      argparser |          parse_arguments | Unpacked arguments{'target': {'target': 'container', 'host': 't'}, 'action': 'list'}
+2021-01-29 16:43:46 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-01-29 16:43:46 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-01-29 16:43:46 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesu7sn1va0/inventory /tmp/temp_filesu7sn1va0/playbook
+2021-01-29 16:43:46 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesu7sn1va0/inventory /tmp/temp_filesu7sn1va0/playbook
+2021-01-29 16:43:57 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesu7sn1va0/inventory /tmp/temp_filesu7sn1va0/playbook" returned: 4 in 11.310s
+2021-01-29 16:43:57 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesu7sn1va0/inventory /tmp/temp_filesu7sn1va0/playbook' failed. Not Retrying.

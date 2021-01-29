@@ -1,14 +1,18 @@
 import argparse
-from ..loggers import log_debug
+import logging
 from .system import system_parser
 from .network import network_parser
 from .stress import stress_parser
+
+log_debug = logging.getLogger("debugLog")
 
 
 def get_parser(parent=None):
     # connection with main parser
     if not parent:
         anomaly_inject = argparse.ArgumentParser(description='Anomaly Injection', prog='anomaly')
+        anomaly_inject.add_argument("--debug", help="Run command in debug mode", dest="debug", action='store_true')
+
     else:
         anomaly_inject = parent.add_parser('anomaly', help='Anomaly Injection')
 
