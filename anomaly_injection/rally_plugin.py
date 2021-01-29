@@ -1,34 +1,56 @@
-from .injector import AnomalyInjector
 from rally.common import logging
 from rally import consts
 from rally.task import hook
 
-LOG = logging.getLogger(__name__)
+from .anomaly_injection.injector import AnomalyInjector
+from .anomaly_injection.config.loggers import log_info, log_debug
 
 
-@hook.configure(name="fault_injection")
-class FaultInjectionHook(hook.Hook):
+@hook.configure(name="fault_injection2")
+class FaultInjectionHook(hook.HookAction):
     """Performs fault injection."""
 
     CONFIG_SCHEMA = {
         "type": "object",
         "$schema": consts.JSON_SCHEMA,
         "properties": {
-            "action": {"type": "string"},
-        },
-        "required": [
-            "action",
-        ],
-        "additionalProperties": False,
-    }
+            "target":
+                {"type": "object",
+                 "properties":
+                     {
+                         "host": {"type": "string"},
+                         "id": {"type": "string"},
+                         "name": {"type": "string"}
+
+                     }
+                 },
+            "stress": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "params": {"type": "object"}
+                }
+            },
+            "network": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "params": {"type": "object"}
+                }
+            },
+            "system": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "params": {"type": "object"}
+                }
+            },
+        }}
 
     def run(self):
-        LOG.debug("Injecting fault: %s", self.config["action"])
-        injector = AnomalyInjector(**self.config)
 
+        log_debug.debug("Injecting fault: %s", self.config["action"])
         try:
-            injector.connect()
-            injector.run()
 
             self.set_status(consts.HookStatus.SUCCESS)
         except Exception as e:

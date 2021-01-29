@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='chaos_toolkit',
-    version='0.1',
+    version='0.0.1',
     packages=['docs', 'docs.source', 'anomaly_injection', 'anomaly_injection.config',
               'anomaly_injection.config.argparser', 'anomaly_injection.anomalies', 'anomaly_injection.anomalies.stress',
               'anomaly_injection.anomalies.system', 'anomaly_injection.anomalies.network',
@@ -10,7 +10,7 @@ setup(
               'anomaly_injection.node_control.config', 'anomaly_injection.node_control.drivers'],
     package_dir={'': 'openstack_anomaly_injection'},
     url='',
-    license='non',
+    license='',
     author='petar',
     author_email='petar.ilijevski@campus.tu-berlin.de',
     description=''
