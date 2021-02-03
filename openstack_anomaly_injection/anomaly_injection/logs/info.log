@@ -35,3 +35,8 @@
 2021-01-29 16:37:36 | Discovering hosts
 2021-01-29 16:39:24 | Discovering hosts
 2021-01-29 16:43:46 | Discovering hosts
+2021-02-03 11:18:04 | Discovering hosts
+2021-02-03 11:18:27 | Injecting Stress-ng anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-03 11:19:02 | Stress-ng anomaly executed successfully
+2021-02-03 11:22:56 | Discovering hosts
+2021-02-03 11:25:49 | Discovering hosts

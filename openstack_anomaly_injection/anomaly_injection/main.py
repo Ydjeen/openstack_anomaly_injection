@@ -9,8 +9,6 @@ parser = get_parser()
 
 def main(args):
     _debug = args.debug or False
-
-    _debug = args.debug or False
     set_debug(_debug)
     path = vars(args).get('config_path', None)
     if not path:

@@ -1,0 +1,52 @@
+{
+  "Dummy.dummy": [
+    {
+      "args": {
+        "sleep": 0.01
+      },
+      "runner": {
+        "type": "constant",
+        "times": 10,
+        "concurrency": 1
+      },
+      "hooks": [
+        {
+          "name": "fault_injection",
+          "args": {
+            "debug": true,
+            "target": {
+              "target": "container",
+              "host": "wally098.cit.tu-berlin.de",
+              "id": "1174a29bff7e"
+            },
+            "params": {
+              "delay": "2s",
+              "duration": "20s",
+              "stressors": "--cpu 8"
+            },
+            "anomaly": "stress-ng",
+            "config":{
+              "ansible": {
+                "ansible_user": "pilijevski",
+                "private_key_file": "~/.ssh/id_rsa"
+              },
+              "hosts": [
+                  "wally098.cit.tu-berlin.de",
+                  "wally099.cit.tu-berlin.de"
+              ]
+            }
+#            "config_path":"path_to_config.json"
+          }
+          ,
+          "trigger": {
+            "name": "event",
+            "args": {
+              "unit": "iteration",
+              "at": [ 3, 6 ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

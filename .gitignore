@@ -1,7 +1,8 @@
-/.idea/
+/openstack_anomaly_injection/.idea/
 /venv/
 __pycache__/
-/logs/
-/dist/
-/build/
-/anomaly_injection.egg-info/
+logs/
+dist/
+build/
+anomaly_injection.egg-info/
+.idea/

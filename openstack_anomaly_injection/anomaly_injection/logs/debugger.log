@@ -727,3 +727,81 @@ all:
 2021-01-29 16:43:46 |  DEBUG |   processutils |                  execute | Running cmd (subprocess): env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesu7sn1va0/inventory /tmp/temp_filesu7sn1va0/playbook
 2021-01-29 16:43:57 |  DEBUG |   processutils |                  execute | CMD "env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesu7sn1va0/inventory /tmp/temp_filesu7sn1va0/playbook" returned: 4 in 11.310s
 2021-01-29 16:43:57 |  DEBUG |   processutils |                  execute | 'env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesu7sn1va0/inventory /tmp/temp_filesu7sn1va0/playbook' failed. Not Retrying.
+2021-02-03 11:18:04 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-02-03 11:18:04 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-02-03 11:18:04 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filest5sgk078/inventory /tmp/temp_filest5sgk078/playbook
+2021-02-03 11:18:27 |  DEBUG |     connection |                  connect | Unpacking hosts
+2021-02-03 11:18:27 |  DEBUG |     connection |             _unpack_host | Unpacking containers for host wally098.cit.tu-berlin.de
+2021-02-03 11:18:27 |  DEBUG |     connection |             _unpack_host | Unpacking containers for host wally099.cit.tu-berlin.de
+2021-02-03 11:18:27 |  DEBUG |     connection |                  connect | Discovered hosts: wally098.cit.tu-berlin.de containers: 39 --- wally099.cit.tu-berlin.de containers: 13
+2021-02-03 11:18:27 |  DEBUG |     connection |               get_target | Fetching target container
+2021-02-03 11:18:27 |  DEBUG |    base_driver |                _run_task | Executing task Stress on hosts wally098.cit.tu-berlin.de
+2021-02-03 11:18:27 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-02-03 11:18:27 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - shell:
+      cmd: dockhack cg_exec heat_engine stress-ng --cpu 8 -t 20s
+
+2021-02-03 11:18:27 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files15xzx3q2/inventory /tmp/temp_files15xzx3q2/playbook
+2021-02-03 11:19:02 |  DEBUG |    base_driver |                _run_task | Task Stress executed Successfully
+2021-02-03 11:22:56 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-02-03 11:22:56 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-02-03 11:22:56 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_filesf6oetfgb/inventory /tmp/temp_filesf6oetfgb/playbook
+2021-02-03 11:25:49 |  DEBUG | ansible_runner |                _run_play | Inventory:
+all:
+  hosts:
+    wally098.cit.tu-berlin.de: []
+    wally099.cit.tu-berlin.de: []
+  vars:
+    ansible_user: pilijevski
+    private_key_file: ~/.ssh/id_rsa
+
+2021-02-03 11:25:49 |  DEBUG | ansible_runner |                _run_play | Playbook:
+- become: 'True'
+  gather_facts: 'no'
+  hosts: all
+  tasks:
+  - docker_host_info:
+      containers: 'yes'
+
+2021-02-03 11:25:49 |   INFO | ansible_runner |                _run_play | Executing env ANSIBLE_STDOUT_CALLBACK=json ansible-playbook -i /tmp/temp_files70leh6ln/inventory /tmp/temp_files70leh6ln/playbook
