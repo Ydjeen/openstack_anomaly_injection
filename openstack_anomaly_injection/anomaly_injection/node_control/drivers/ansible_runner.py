@@ -73,6 +73,7 @@ class AnsibleRunner:
                {'inventory': inventory_file_name,
                 'playbook': playbook_file_name})
 
+        print(cmd)
         logging.info('Executing %s' % cmd)
         try:
             command_stdout, command_stderr = processutils.execute(
@@ -89,6 +90,9 @@ class AnsibleRunner:
                 raise Exception("Host %s is %s" % (h, status))
             elif hv.get('failed'):
                 status = STATUS_FAILED
+                _task_name = play_source.get("tasks", [{}])[0].get("name", "")
+                _reason = hv['stdout'] if len(hv['stdout']) else hv['stderr']
+                raise Exception(f"Task %s has %s due to: %s" % (_task_name, status, _reason))
             else:
                 status = STATUS_OK
 
@@ -108,7 +112,7 @@ class AnsibleRunner:
 
         return result
 
-    def execute(self, hosts, task):
+    def execute(self, hosts, task, task_name=""):
         """
         Execute a task on target hosts
 

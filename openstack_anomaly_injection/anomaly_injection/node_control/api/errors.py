@@ -13,6 +13,11 @@ class DeploymentException(BaseException):
         super().__init__(msg)
 
 
+class NetworkException(BaseException):
+    def __init__(self, msg):
+        super().__init__(msg)
+
+
 class DriverException(BaseException):
     def __init__(self, msg):
         super().__init__(msg)

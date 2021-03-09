@@ -40,7 +40,7 @@ class Anomaly:
         if _target not in self.supported_targets:
             raise Exception(f"Target {_target} not supported for anomaly {self.name}")
         self.target = self.conn.get_target(target.get('target'), host=target.get('host'), id=target.get('id'),
-                                           name=target.get('name'))
+                                           name=target.get('name'), interface=target.get('interface'))
         self._unpack_params(params)
 
     def run(self):

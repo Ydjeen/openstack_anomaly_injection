@@ -36,8 +36,9 @@ def get_parser(parent=None):
     anomaly_network = anomaly_subcommands.add_parser('network', prog='network', usage=f"{anomaly_inject.prog} %(prog)s",
                                                      parents=[anomaly_parser],
                                                      description="Network anomaly injector, "
-                                                                 "must specify host and name or id")
-
+                                                                 "must specify host and interface ")
+    anomaly_network.add_argument('--interface', help='Name of interface', type=str, metavar='[NAME]',
+                                 dest="target_interface")
     anomaly_deployment = anomaly_subcommands.add_parser('deployment', prog='deployment',
                                                         usage=f"{anomaly_inject.prog} %(prog)s",
                                                         parents=[anomaly_parser],
@@ -66,10 +67,10 @@ def get_parser(parent=None):
     dep_net = dep_anomalies.add_parser("network", parents=[network_parser])
 
     # Network Anomaly
-    net_anomalies = anomaly_network.add_subparsers()
+    net_anomalies = anomaly_network.add_subparsers(dest="anomaly_type")
     net_stress = net_anomalies.add_parser("stress", parents=[stress_parser])
-    net_system = net_anomalies.add_parser("system", parents=[network_parser])
-    net_net = net_anomalies.add_parser("network", parents=[system_parser])
+    net_system = net_anomalies.add_parser("system", parents=[system_parser])
+    net_net = net_anomalies.add_parser("network", parents=[network_parser])
 
     if parent:
         return parent

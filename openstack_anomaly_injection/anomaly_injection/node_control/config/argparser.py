@@ -10,7 +10,7 @@ _available_commands = ["list"]
 def get_parser(parent=None):
     # Anomaly commands
     conf_file_parser = argparse.ArgumentParser(add_help=False)
-    conf_file_parser.add_argument('--config_file', help='Path to config file', metavar='[path]',
+    conf_file_parser.add_argument('--config_file', '--config_path', help='Path to config file', metavar='[path]',
                                   dest="config_file")
 
     if not parent:
@@ -35,6 +35,9 @@ def get_parser(parent=None):
     admin_container = admin_subcommands.add_parser('container', prog='Container', parents=[admin_parser])
     admin_node = admin_subcommands.add_parser('node', prog='Node', parents=[admin_parser])
     admin_network = admin_subcommands.add_parser('network', prog='Network', parents=[admin_parser])
+    admin_network.add_argument('--interface', help='Name of interface', type=str, metavar='[NAME]',
+                               dest="target_interface")
+
     admin_deployment = admin_subcommands.add_parser('deployment', prog='Deployment', parents=[admin_parser])
 
     if parent:

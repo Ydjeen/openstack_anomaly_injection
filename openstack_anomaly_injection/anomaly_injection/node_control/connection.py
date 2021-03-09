@@ -14,6 +14,8 @@ class CloudConnection:
         :type ansible:class AnsibleRunner:
         :ivar hosts: Dictionary containing the hosts on the deployment ( Key->value = host_ip-> host_object)
         :type hosts: dict
+        :ivar networks: Dictionary containing the available network interfaces.
+        :type networks: dict
         :ivar cluster: Object representing the cluster.
         :type cluster: class: `AnsibleRunner`
         :ivar network_d: :class:`.drivers.NetworkDriver` for performing networking tasks on the deployment.
@@ -32,7 +34,7 @@ class CloudConnection:
 
     def __init__(self, config, connect=True):
         self.ansible = None
-        self.cluster = self.hosts = dict()
+        self.cluster = self.hosts = self.networks = dict()
         self.network_d = self.cont_d = self.host_d = self.cloud_d = None
         self._parse_config(config)
         self._init_drivers()
@@ -59,24 +61,18 @@ class CloudConnection:
         :return: Deployment object
 
         """
-        # GET THIS FROM ANSIBLE
-        task = {
-            'docker_host_info': {
-                'containers': 'yes'
-            },
-        }
-        log_info.info("Discovering hosts")
-        result = self.ansible.execute(self.hosts, task)
-        with open("cloud_info.json", 'w') as file:
-            json.dump(result, file)
-        hosts = {}
-        log_debug.debug("Unpacking hosts")
-        for host in result:
-            _host = self._unpack_host(host)
-            hosts[_host.ip] = _host
+
+        hosts = self._discover_hosts()
         _hosts = " --- ".join([host.ip + " containers: " + str(len(host.containers)) for host in hosts.values()])
         log_debug.debug("Discovered hosts: " + _hosts)
-        deployment = Deployment(hosts, self.cloud_d, result)
+        self.networks = self._discover_networks()
+        _networks = " --- ".join(
+            [host + ":" + str(" ".join([net.device for net in networks])) for host, networks in self.networks.items()])
+        log_debug.debug("Discovered networks: " + _networks)
+
+        for hostname, host in hosts.items():
+            host.init_networks(self.networks[hostname])
+        deployment = Deployment(hosts, self.cloud_d)
         self.cluster = deployment
         self.hosts = hosts
         return deployment
@@ -111,7 +107,14 @@ class CloudConnection:
         return str(self.hosts)
 
     def list_networks(self, target):
-        raise NotImplementedError
+        result = {}
+        host = target['host']
+        if host == 'all':
+            for host, host in self.hosts.items():
+                result[host] = host.list_networks()
+        else:
+            result[host] = self.hosts[host].list_networks()
+        return result
 
     def get_host(self, host):
         """Get the object of a target host
@@ -123,20 +126,25 @@ class CloudConnection:
             raise Exception("host %s not found on cluster" % host)
         return self.hosts[host]
 
-    def execute_ansible(self, hosts, task):
-        """
-        Execute an ansible task on the deployment.
+    def get_network(self, host, interface):
+        for net in self.networks[host]:
+            if net.device == interface:
+                return net
 
-        :param hosts: List of hosts
-        :type hosts: list
-        :param task: Task that needs to be executed
-        :type task: dict
+        def execute_ansible(self, hosts, task):
+            """
+            Execute an ansible task on the deployment.
 
-        :return: List of Named tuples containing the 'host', 'status', 'task' and 'payload' in json format.
-        :rtype: list
+            :param hosts: List of hosts
+            :type hosts: list
+            :param task: Task that needs to be executed
+            :type task: dict
 
-        """
-        self.ansible.execute(hosts, task)
+            :return: List of Named tuples containing the 'host', 'status', 'task' and 'payload' in json format.
+            :rtype: list
+
+            """
+            self.ansible.execute(hosts, task)
 
     def get_container(self, host, container_id=None, name=None):
         """
@@ -157,7 +165,7 @@ class CloudConnection:
         container = self.hosts[host].get_container(container_id, name)
         return container
 
-    def get_target(self, target, host=None, id=None, name=None):
+    def get_target(self, target, host=None, id=None, name=None, interface=None):
         """
         Get the requested target from the deployment.
 
@@ -169,17 +177,18 @@ class CloudConnection:
         :type id: str, optional
         :param name: Target name
         :type name: str, optional
+        :param interface: Target network interface
+        :type interface: str, optional
 
         :return: Target object
         """
         log_debug.debug(f"Fetching target {target}")
         if target == 'container':
             return self.get_container(host, id, name)
-        elif target == 'host':
+        elif target in ['host', 'node']:
             return self.get_host(host)
-        elif target == 'node':
-            print("the host is ", self.hosts)
-            return self.get_host(host)
+        elif target == "network":
+            return self.get_network(host, interface)
         else:
             raise Exception("Target type does not exist")
 
@@ -250,3 +259,44 @@ class CloudConnection:
             return self.list_networks(target)
         else:
             raise Exception("Invalid target")
+
+    def _discover_hosts(self):
+        # GET THIS FROM ANSIBLE
+        task = {
+            'docker_host_info': {
+                'containers': 'yes'
+            },
+        }
+        log_info.info("Discovering hosts")
+        result = self.ansible.execute(self.hosts, task)
+        # with open("cloud_info.json", 'w') as file:
+        #     json.dump(result, file)
+        hosts = {}
+        log_debug.debug("Unpacking hosts")
+        for host in result:
+            _host = self._unpack_host(host)
+            hosts[_host.ip] = _host
+        return hosts
+
+    def _discover_networks(self):
+        task = {
+            'ansible.builtin.setup': {
+                'gather_subset': ['!all', 'network', "!min"]
+            }}
+        log_info.info("Discovering network interfaces")
+        result = self.ansible.execute(self.hosts, task)
+        networks = {}
+        log_debug.debug("Unpacking networks")
+        for host in result:
+            networks[host[0]] = self._unpack_networks(host)
+        return networks
+
+    def _unpack_networks(self, host):
+        networks = host.payload['ansible_facts']['ansible_interfaces']
+        network_objects = list()
+        for network in networks:
+            network = network.replace("-", "_")
+            _params = host.payload['ansible_facts'][f"ansible_{network}"]
+            network_objects.append(Network(host.host, **_params, network_driver=self.network_d))
+
+        return network_objects

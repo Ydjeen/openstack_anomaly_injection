@@ -40,3 +40,587 @@
 2021-02-03 11:19:02 | Stress-ng anomaly executed successfully
 2021-02-03 11:22:56 | Discovering hosts
 2021-02-03 11:25:49 | Discovering hosts
+2021-02-11 14:23:51 | Discovering hosts
+2021-02-11 14:24:02 | Host wally098.cit.tu-berlin.de is UNREACHABLE
+2021-02-11 14:24:04 | Discovering hosts
+2021-02-11 14:24:12 | 'Container' object has no attribute '__name__'
+2021-02-11 14:25:07 | Discovering hosts
+2021-02-11 14:25:11 | Injecting Stress-ng anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 14:25:11 | Stress-ng anomaly executed successfully
+2021-02-11 14:25:33 | Discovering hosts
+2021-02-11 14:25:36 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 14:25:36 | TC anomaly executed successfully
+2021-02-11 14:26:38 | Discovering hosts
+2021-02-11 14:26:55 | Discovering hosts
+2021-02-11 14:26:58 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 14:26:58 | TC anomaly executed successfully
+2021-02-11 14:44:23 | Discovering hosts
+2021-02-11 14:44:27 | Discovering network interfaces
+2021-02-11 14:46:44 | Discovering hosts
+2021-02-11 14:46:50 | Discovering hosts
+2021-02-11 14:46:53 | Discovering network interfaces
+2021-02-11 14:48:27 | Discovering hosts
+2021-02-11 14:48:33 | Discovering network interfaces
+2021-02-11 17:13:56 | Discovering hosts
+2021-02-11 17:14:01 | name 'result' is not defined
+2021-02-11 17:14:53 | Discovering hosts
+2021-02-11 17:14:57 | Discovering network interfaces
+2021-02-11 17:20:47 | 'list' object has no attribute 'get'
+2021-02-11 17:21:07 | Discovering hosts
+2021-02-11 17:21:12 | Discovering network interfaces
+2021-02-11 17:48:51 | Discovering hosts
+2021-02-11 17:48:55 | Discovering hosts
+2021-02-11 17:48:58 | Discovering network interfaces
+2021-02-11 17:49:02 | 'list' object has no attribute 'get'
+2021-02-11 17:49:33 | Discovering hosts
+2021-02-11 17:49:36 | Discovering network interfaces
+2021-02-11 17:49:40 | 'list' object has no attribute 'get'
+2021-02-11 17:50:57 | Discovering hosts
+2021-02-11 17:51:02 | Discovering network interfaces
+2021-02-11 17:51:05 | 'list' object has no attribute 'get'
+2021-02-11 17:51:58 | Discovering hosts
+2021-02-11 17:52:02 | Discovering network interfaces
+2021-02-11 17:52:06 | tuple indices must be integers or slices, not str
+2021-02-11 17:52:48 | Discovering hosts
+2021-02-11 17:52:52 | Discovering network interfaces
+2021-02-11 17:52:56 | tuple indices must be integers or slices, not str
+2021-02-11 17:53:19 | Discovering hosts
+2021-02-11 17:53:23 | Discovering network interfaces
+2021-02-11 17:54:41 | Discovering hosts
+2021-02-11 17:54:46 | Discovering network interfaces
+2021-02-11 17:54:51 | __init__() missing 1 required positional argument: 'stp'
+2021-02-11 17:55:27 | Discovering hosts
+2021-02-11 17:55:30 | Discovering network interfaces
+2021-02-11 17:56:05 | 'ansible_br-tun'
+2021-02-11 17:56:18 | Discovering hosts
+2021-02-11 17:56:22 | Discovering network interfaces
+2021-02-11 17:58:18 | Discovering hosts
+2021-02-11 17:58:23 | Discovering network interfaces
+2021-02-11 17:58:42 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 17:58:42 | 'Container' object has no attribute 'script'
+2021-02-11 18:25:22 | Discovering hosts
+2021-02-11 18:25:26 | Discovering network interfaces
+2021-02-11 18:25:30 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:25:34 | TC anomaly executed successfully
+2021-02-11 18:26:09 | Discovering hosts
+2021-02-11 18:26:12 | Discovering network interfaces
+2021-02-11 18:26:16 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:26:19 | TC anomaly executed successfully
+2021-02-11 18:27:20 | Discovering hosts
+2021-02-11 18:27:25 | Discovering network interfaces
+2021-02-11 18:27:28 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:28:31 | Discovering hosts
+2021-02-11 18:28:38 | Discovering network interfaces
+2021-02-11 18:28:43 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:31:26 | Discovering hosts
+2021-02-11 18:31:41 | Discovering network interfaces
+2021-02-11 18:31:47 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:31:49 | name 'msg' is not defined
+2021-02-11 18:32:36 | Discovering hosts
+2021-02-11 18:32:42 | Discovering network interfaces
+2021-02-11 18:32:46 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:32:49 | Task  is FAILED
+2021-02-11 18:33:04 | Discovering hosts
+2021-02-11 18:33:08 | Discovering network interfaces
+2021-02-11 18:33:12 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:34:22 | Discovering hosts
+2021-02-11 18:34:27 | Discovering network interfaces
+2021-02-11 18:34:31 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:34:44 | 0
+2021-02-11 18:34:55 | Discovering hosts
+2021-02-11 18:34:58 | Discovering network interfaces
+2021-02-11 18:35:02 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:36:09 | Discovering hosts
+2021-02-11 18:36:14 | Discovering network interfaces
+2021-02-11 18:36:18 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:36:21 | Task Script has FAILED
+2021-02-11 18:36:33 | Discovering hosts
+2021-02-11 18:36:37 | Discovering network interfaces
+2021-02-11 18:36:41 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:40:05 | Discovering hosts
+2021-02-11 18:40:10 | Discovering network interfaces
+2021-02-11 18:40:13 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:42:56 | Discovering hosts
+2021-02-11 18:43:01 | Discovering network interfaces
+2021-02-11 18:43:04 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:43:06 | TC anomaly executed successfully
+2021-02-11 18:43:15 | Discovering hosts
+2021-02-11 18:43:19 | Discovering network interfaces
+2021-02-11 18:43:22 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:43:32 | TC anomaly executed successfully
+2021-02-11 18:44:30 | Discovering hosts
+2021-02-11 18:44:35 | Discovering network interfaces
+2021-02-11 18:44:39 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:44:41 | TC anomaly executed successfully
+2021-02-11 18:45:03 | Discovering hosts
+2021-02-11 18:45:06 | Discovering network interfaces
+2021-02-11 18:45:10 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:45:16 | TC anomaly executed successfully
+2021-02-11 18:45:46 | Discovering hosts
+2021-02-11 18:46:26 | Discovering network interfaces
+2021-02-11 18:46:41 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:50:53 | Discovering hosts
+2021-02-11 18:51:02 | Discovering network interfaces
+2021-02-11 18:51:05 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:52:53 | Task Script has FAILED
+2021-02-11 18:54:04 | Discovering hosts
+2021-02-11 18:54:09 | Discovering network interfaces
+2021-02-11 18:54:12 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:54:27 | Task Script has FAILED due to: /home/pilijevski/.ansible/tmp/ansible-tmp-1613066053.0878894-19441-29171686966540/tcanomaly.sh: 1: /home/pilijevski/.ansible/tmp/ansible-tmp-1613066053.0878894-19441-29171686966540/tcanomaly.sh: tcset: not found
+/home/pilijevski/.ansible/tmp/ansible-tmp-1613066053.0878894-19441-29171686966540/tcanomaly.sh: 3: /home/pilijevski/.ansible/tmp/ansible-tmp-1613066053.0878894-19441-29171686966540/tcanomaly.sh: tcdel: not found
+
+2021-02-11 18:54:54 | Discovering hosts
+2021-02-11 18:55:25 | Discovering network interfaces
+2021-02-11 18:55:54 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:55:56 | Task Script has FAILED due to: /home/pilijevski/.ansible/tmp/ansible-tmp-1613066154.9782763-19740-220688450943012/tcanomaly.sh: 1: /home/pilijevski/.ansible/tmp/ansible-tmp-1613066154.9782763-19740-220688450943012/tcanomaly.sh: tcset: not found
+/home/pilijevski/.ansible/tmp/ansible-tmp-1613066154.9782763-19740-220688450943012/tcanomaly.sh: 3: /home/pilijevski/.ansible/tmp/ansible-tmp-1613066154.9782763-19740-220688450943012/tcanomaly.sh: tcdel: not found
+
+2021-02-11 18:57:35 | Discovering hosts
+2021-02-11 18:57:39 | Discovering network interfaces
+2021-02-11 18:57:42 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 18:57:45 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+Traceback (most recent call last):
+  File "/usr/local/bin/tcdel", line 5, in <module>
+    from tcconfig.tcdel import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcdel.py", line 15, in <module>
+    from ._capabilities import check_execution_authority
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_capabilities.py", line 13, in <module>
+    from ._common import find_bin_path
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_common.py", line 19, in <module>
+    from ._logger import logger, set_log_level
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_logger.py", line 10, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-11 19:52:20 | Discovering hosts
+2021-02-11 19:52:25 | Discovering network interfaces
+2021-02-11 19:52:28 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-02-11 19:56:53 | 'anomaly_type'
+2021-02-11 19:57:44 | 'anomaly_type'
+2021-02-11 19:59:44 | Discovering hosts
+2021-02-11 19:59:50 | Discovering network interfaces
+2021-02-11 19:59:53 | Target type does not exist
+2021-02-11 20:02:46 | Discovering hosts
+2021-02-11 20:02:50 | Discovering network interfaces
+2021-02-11 20:02:54 | sequence item 1: expected str instance, NoneType found
+2021-02-11 20:03:22 | Discovering hosts
+2021-02-11 20:03:25 | Discovering network interfaces
+2021-02-11 20:05:17 | Discovering hosts
+2021-02-11 20:05:21 | Discovering network interfaces
+2021-02-11 20:05:28 | sequence item 1: expected str instance, Network found
+2021-02-11 20:05:53 | Discovering hosts
+2021-02-11 20:05:56 | Discovering network interfaces
+2021-02-11 20:06:00 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:07:26 | Discovering hosts
+2021-02-11 20:07:31 | Discovering network interfaces
+2021-02-11 20:07:34 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:07:34 | 'Network' object has no attribute 'script'
+2021-02-11 20:10:16 | Discovering hosts
+2021-02-11 20:10:20 | Discovering network interfaces
+2021-02-11 20:10:24 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:10:26 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+Traceback (most recent call last):
+  File "/usr/local/bin/tcdel", line 5, in <module>
+    from tcconfig.tcdel import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcdel.py", line 15, in <module>
+    from ._capabilities import check_execution_authority
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_capabilities.py", line 13, in <module>
+    from ._common import find_bin_path
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_common.py", line 19, in <module>
+    from ._logger import logger, set_log_level
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_logger.py", line 10, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-11 20:18:25 | Discovering hosts
+2021-02-11 20:18:29 | Discovering network interfaces
+2021-02-11 20:18:32 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:18:35 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+Traceback (most recent call last):
+  File "/usr/local/bin/tcdel", line 5, in <module>
+    from tcconfig.tcdel import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcdel.py", line 15, in <module>
+    from ._capabilities import check_execution_authority
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_capabilities.py", line 13, in <module>
+    from ._common import find_bin_path
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_common.py", line 19, in <module>
+    from ._logger import logger, set_log_level
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_logger.py", line 10, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-11 20:23:22 | Discovering hosts
+2021-02-11 20:23:27 | Discovering network interfaces
+2021-02-11 20:23:30 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:26:07 | Discovering hosts
+2021-02-11 20:26:11 | Discovering network interfaces
+2021-02-11 20:26:14 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:26:15 | [Errno 2] No such file or directory: '/tmp/temp_filesujyusvox/tcanomaly.sh'
+2021-02-11 20:26:54 | Discovering hosts
+2021-02-11 20:26:57 | Discovering network interfaces
+2021-02-11 20:27:01 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:29:09 | Discovering hosts
+2021-02-11 20:29:14 | Discovering network interfaces
+2021-02-11 20:29:17 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:29:18 | [Errno 2] No such file or directory: 'tcset --delay 100ms --tc-command docker0': 'tcset --delay 100ms --tc-command docker0'
+2021-02-11 20:30:43 | Discovering hosts
+2021-02-11 20:30:47 | Discovering network interfaces
+2021-02-11 20:30:51 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:30:51 | split() takes from 1 to 3 positional arguments but 40 were given
+2021-02-11 20:31:32 | Discovering hosts
+2021-02-11 20:31:35 | Discovering network interfaces
+2021-02-11 20:31:39 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:36:23 | Discovering hosts
+2021-02-11 20:36:28 | Discovering network interfaces
+2021-02-11 20:36:32 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:36:32 | Unexpected error while running command.
+Command: tcdel docker0 --all
+Exit code: 1
+Stdout: ''
+Stderr: '\x1b[31m\x1b[1m[ERROR]\x1b[0m Permission denied: you must be root or set Linux capabilities to execute the command.\n  How to setup Linux capabilities for the tc command:\n    $ sudo setcap cap_net_admin+ep /sbin/tc\n'
+2021-02-11 20:38:18 | Discovering hosts
+2021-02-11 20:38:22 | Discovering network interfaces
+2021-02-11 20:38:26 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:39:07 | Discovering hosts
+2021-02-11 20:39:10 | Discovering network interfaces
+2021-02-11 20:39:13 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:40:05 | Discovering hosts
+2021-02-11 20:40:08 | Discovering network interfaces
+2021-02-11 20:40:12 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:41:28 | Discovering hosts
+2021-02-11 20:41:33 | Discovering network interfaces
+2021-02-11 20:41:36 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:41:37 | sequence item 1: expected str instance, int found
+2021-02-11 20:42:12 | Discovering hosts
+2021-02-11 20:42:15 | Discovering network interfaces
+2021-02-11 20:42:18 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:43:12 | Discovering hosts
+2021-02-11 20:43:15 | Discovering network interfaces
+2021-02-11 20:43:19 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:44:26 | Task Script has FAILED due to: Unknown qdisc "root/sbin/tc", hence option "qdisc" is unparsable
+
+2021-02-11 20:46:00 | Discovering hosts
+2021-02-11 20:46:04 | Discovering network interfaces
+2021-02-11 20:46:08 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:46:31 | Task Script has FAILED due to: RTNETLINK answers: File exists
+RTNETLINK answers: File exists
+RTNETLINK answers: File exists
+RTNETLINK answers: File exists
+RTNETLINK answers: No such file or directory
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+
+2021-02-11 20:47:31 | Discovering hosts
+2021-02-11 20:47:36 | Discovering network interfaces
+2021-02-11 20:47:39 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:48:03 | Task Script has FAILED due to: RTNETLINK answers: No such file or directory
+RTNETLINK answers: No such file or directory
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+RTNETLINK answers: No such file or directory
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+
+2021-02-11 20:49:59 | Discovering hosts
+2021-02-11 20:50:03 | Discovering network interfaces
+2021-02-11 20:50:07 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: docker0
+2021-02-11 20:50:30 | Task Script has FAILED due to: RTNETLINK answers: No such file or directory
+RTNETLINK answers: No such file or directory
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+RTNETLINK answers: No such file or directory
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+Cannot find device "ifb8054"
+
+2021-02-11 20:51:12 | Discovering hosts
+2021-02-11 20:51:17 | Discovering network interfaces
+2021-02-11 20:51:21 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-11 20:51:44 | Task Script has FAILED due to: RTNETLINK answers: No such file or directory
+Cannot find device "ifb6094"
+Cannot find device "ifb6094"
+Cannot find device "ifb6094"
+RTNETLINK answers: No such file or directory
+Cannot find device "ifb6094"
+Cannot find device "ifb6094"
+Cannot find device "ifb6094"
+
+2021-02-12 14:06:31 | Discovering hosts
+2021-02-12 14:06:34 | Discovering network interfaces
+2021-02-12 14:06:37 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:07:01 | Task Script has FAILED due to: RTNETLINK answers: No such file or directory
+RTNETLINK answers: No such file or directory
+Cannot find device "ifb6094"
+Cannot find device "ifb6094"
+Cannot find device "ifb6094"
+RTNETLINK answers: No such file or directory
+Cannot find device "ifb6094"
+Cannot find device "ifb6094"
+Cannot find device "ifb6094"
+
+2021-02-12 14:12:27 | Discovering hosts
+2021-02-12 14:12:31 | Discovering network interfaces
+2021-02-12 14:12:35 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:12:35 | Unexpected error while running command.
+Command: tcset --delay 100ms lo
+Exit code: 1
+Stdout: ''
+Stderr: '\x1b[31m\x1b[1m[ERROR]\x1b[0m Permission denied: you must be root or set Linux capabilities to execute the command.\n  How to setup Linux capabilities for the tc command:\n    $ sudo setcap cap_net_admin+ep /sbin/tc\n'
+2021-02-12 14:14:31 | Discovering hosts
+2021-02-12 14:14:35 | Discovering network interfaces
+2021-02-12 14:14:39 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:14:41 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+Traceback (most recent call last):
+  File "/usr/local/bin/tcdel", line 5, in <module>
+    from tcconfig.tcdel import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcdel.py", line 15, in <module>
+    from ._capabilities import check_execution_authority
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_capabilities.py", line 13, in <module>
+    from ._common import find_bin_path
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_common.py", line 19, in <module>
+    from ._logger import logger, set_log_level
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_logger.py", line 10, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-12 14:17:11 | Discovering hosts
+2021-02-12 14:17:16 | Discovering network interfaces
+2021-02-12 14:17:19 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:17:21 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+Traceback (most recent call last):
+  File "/usr/local/bin/tcdel", line 5, in <module>
+    from tcconfig.tcdel import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcdel.py", line 15, in <module>
+    from ._capabilities import check_execution_authority
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_capabilities.py", line 13, in <module>
+    from ._common import find_bin_path
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_common.py", line 19, in <module>
+    from ._logger import logger, set_log_level
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_logger.py", line 10, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-12 14:23:04 | Discovering hosts
+2021-02-12 14:23:09 | Discovering network interfaces
+2021-02-12 14:23:12 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:23:14 | TC anomaly executed successfully
+2021-02-12 14:23:30 | Discovering hosts
+2021-02-12 14:23:33 | Discovering network interfaces
+2021-02-12 14:23:36 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:23:39 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-12 14:25:22 | Discovering hosts
+2021-02-12 14:25:27 | Discovering network interfaces
+2021-02-12 14:25:30 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:25:33 | TC anomaly executed successfully
+2021-02-12 14:25:49 | Discovering hosts
+2021-02-12 14:25:52 | Discovering network interfaces
+2021-02-12 14:25:56 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:25:58 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-12 14:26:41 | Discovering hosts
+2021-02-12 14:26:44 | Discovering network interfaces
+2021-02-12 14:26:47 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:26:50 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-12 14:32:51 | Discovering hosts
+2021-02-12 14:32:55 | Discovering network interfaces
+2021-02-12 14:32:58 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:33:00 | Task Script has FAILED due to: 
+2021-02-12 14:33:36 | Discovering hosts
+2021-02-12 14:33:39 | Discovering network interfaces
+2021-02-12 14:33:42 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:33:45 | Task Script has FAILED due to: 
+2021-02-12 14:34:04 | Discovering hosts
+2021-02-12 14:34:07 | Discovering network interfaces
+2021-02-12 14:34:10 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:34:38 | Task Script has FAILED due to: 
+2021-02-12 14:35:41 | Discovering hosts
+2021-02-12 14:35:45 | Discovering network interfaces
+2021-02-12 14:35:49 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:35:56 | Task Script has FAILED due to: 
+2021-02-12 14:36:37 | Discovering hosts
+2021-02-12 14:36:41 | Discovering network interfaces
+2021-02-12 14:36:44 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 14:37:17 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-12 15:59:49 | Discovering hosts
+2021-02-12 15:59:53 | Discovering network interfaces
+2021-02-12 15:59:56 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 15:59:57 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 15, in <module>
+    from loguru import logger
+  File "/usr/local/lib/python3.6/dist-packages/loguru/__init__.py", line 10, in <module>
+    from ._logger import Core as _Core
+  File "/usr/local/lib/python3.6/dist-packages/loguru/_logger.py", line 108, in <module>
+    from aiocontextvars import ContextVar
+  File "/usr/local/lib/python3.6/dist-packages/aiocontextvars.py", line 9, in <module>
+    from contextvars import Context, ContextVar, Token, copy_context
+ModuleNotFoundError: No module named 'contextvars'
+
+2021-02-12 16:07:13 | Discovering hosts
+2021-02-12 16:07:17 | Discovering network interfaces
+2021-02-12 16:07:20 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 16:07:21 | Task Script has FAILED due to: Traceback (most recent call last):
+  File "/usr/local/bin/tcset", line 5, in <module>
+    from tcconfig.tcset import main
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/tcset.py", line 29, in <module>
+    from ._importer import set_tc_from_file
+  File "/usr/local/lib/python3.6/dist-packages/tcconfig/_importer.py", line 10, in <module>
+    import pyparsing as pp
+ModuleNotFoundError: No module named 'pyparsing'
+
+2021-02-12 16:08:28 | Discovering hosts
+2021-02-12 16:08:33 | Discovering network interfaces
+2021-02-12 16:08:37 | Injecting TC anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Device: lo
+2021-02-12 16:08:38 | TC anomaly executed successfully
+2021-03-09 11:03:51 | Discovering hosts
+2021-03-09 11:03:58 | Discovering network interfaces
+2021-03-09 11:04:01 | Injecting Stress-ng anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-03-09 11:04:19 | Task  has FAILED due to: 
+2021-03-09 11:04:27 | Discovering hosts
+2021-03-09 11:04:30 | Discovering network interfaces
+2021-03-09 11:04:34 | Injecting Stress-ng anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-03-09 11:05:56 | Discovering hosts
+2021-03-09 11:06:00 | Discovering network interfaces
+2021-03-09 11:06:03 | Injecting Stress-ng anomaly for 20s after 0s on Host: wally098.cit.tu-berlin.de - Name: heat_engine - ID: 1174a29bff7e5d6b1aedd4a4443eb861e44d5b5d9b989c0742da20b700d12d6c
+2021-03-09 11:06:06 | Task  has FAILED due to: Value 15.0B is out of range for vm-bytes, allowed: 4.0KB .. 256.0TB
+2021-03-09 11:07:05 | Discovering hosts
+2021-03-09 11:07:10 | Discovering network interfaces
+2021-03-09 11:07:13 | Injecting Stress-ng anomaly for 20s after 0s on wally098.cit.tu-berlin.de
+2021-03-09 11:07:16 | Task  has FAILED due to: Value 15.0B is out of range for vm-bytes, allowed: 4.0KB .. 256.0TB

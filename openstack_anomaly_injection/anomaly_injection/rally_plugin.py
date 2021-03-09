@@ -26,7 +26,8 @@ class FaultInjectionHook(hook.HookAction):
                          "target": {"type": "string"},
                          "host": {"type": "string"},
                          "id": {"type": "string"},
-                         "name": {"type": "string"}
+                         "name": {"type": "string"},
+                         "interface": {"type": "string"}
 
                      }
                  },
@@ -86,8 +87,7 @@ class FaultInjectionHook(hook.HookAction):
 
             cfg = self._init_cfg(self.config)
             self.config['name'] = self.config['anomaly']
-            print(cfg)
-            print(type(cfg['ansible']))
+
             injector = AnomalyInjector(cfg, self.config)
             injector.run()
 

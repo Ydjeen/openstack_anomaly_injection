@@ -1,4 +1,3 @@
-
 class Host:
     """Host object representing a host on the deployment.
 
@@ -13,11 +12,12 @@ class Host:
 
     """
 
-    def __init__(self, ip, containers=None, host_info=None, driver=None):
+    def __init__(self, ip, containers=None, host_info=None, driver=None, networks=None):
         self.ip = ip
         self.driver = driver
         self.containers = containers or {}
         self.host_info = host_info or {}
+        self.networks = networks or {}
 
     def __repr__(self):
         return self.ip
@@ -25,9 +25,19 @@ class Host:
     def __str__(self):
         return self.ip
 
+    def init_networks(self, networks):
+        if len(self.networks) == 0:
+            self.networks = networks
+        else:
+            raise Exception("Networks already initialized.")
+
     def list_containers(self):
         """List the available containers on the host"""
         return [cont.name for key, cont in self.containers.items()]
+
+    def list_networks(self):
+        """List the available containers on the host"""
+        return [net.device for net in self.networks]
 
     def get_container(self, container_id=None, name=None):
         """

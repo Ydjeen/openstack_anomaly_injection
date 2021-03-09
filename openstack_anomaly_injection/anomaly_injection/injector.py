@@ -1,6 +1,7 @@
 from .node_control import CloudConnection
-from .anomalies.system.pause import PauseAnomaly
-from .anomalies.stress.stress_ng import StressNgAnomaly
+from .anomalies.system import PauseAnomaly
+from .anomalies.stress import StressNgAnomaly
+from .anomalies.network import TCAnomaly
 
 
 class AnomalyInjector:
@@ -12,7 +13,7 @@ class AnomalyInjector:
     :param anomalies: Cloud configuration parameters for connecting to the deployment.
     :type list <dict>: List of anomaly configurations
     """
-    _anomaly_cls = {"pause": PauseAnomaly, "stress-ng": StressNgAnomaly}
+    _anomaly_cls = {"pause": PauseAnomaly, "stress-ng": StressNgAnomaly, "tc": TCAnomaly}
 
     def __init__(self, cloud_config, anomalies):
         self.cloud_config = cloud_config

@@ -70,3 +70,24 @@ class DockerContainer(BaseDriver):
         }
         hosts = [host]
         return self._run_task(hosts, task, 'Stress')
+
+    def script(self, name, host, filename):
+        """Perform stress test on the container using stress-ng. Note: dockhack is used in order to run the stressors on
+        the resource group that the containers belongs to.
+
+         :param name: Container name
+         :type name: str
+         :param host: Hostname
+         :type host: str
+         :param filename: Path to file on local disk
+         :type filename: str
+         """
+
+        task = {
+            'name': 'Script',
+            'ansible.builtin.script': {
+                'cmd': filename
+            },
+        }
+        hosts = [host]
+        return self._run_task(hosts, task, 'Script')

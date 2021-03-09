@@ -32,7 +32,7 @@ class BaseDriver(object):
         :return: 
         """
         log_debug.debug(f"Executing task {task_name} on hosts {', '.join(hosts)}")
-        result = self.ansible_executor.execute(hosts, task)
+        result = self.ansible_executor.execute(hosts, task, task_name)
         if result[0].status == 'OK':
             log_debug.debug(f"Task {task_name} executed Successfully")
         return result

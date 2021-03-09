@@ -26,6 +26,7 @@ class Container:
     :param network_driver: Driver for communicating with the network on the deployment
     :type network_driver: object
     """
+
     def __init__(self, id, host, image, command, created, status, ports, name, container_driver=None,
                  network_driver=None,
                  *args, **kwargs):
@@ -68,6 +69,15 @@ class Container:
         """
         self._check_driver(self.container_driver)
         self.container_driver.stress(self.name, self.host, stressors)
+
+    def script(self, filename):
+        """Run a script on target container
+
+        :param filename: Path to file on local disk
+        :type filename: str
+        """
+        self._check_driver(self.container_driver)
+        return self.container_driver.script(self.name, self.host, filename)
 
     @staticmethod
     def _check_driver(driver):
