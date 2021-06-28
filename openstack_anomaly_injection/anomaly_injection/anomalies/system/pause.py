@@ -28,8 +28,7 @@ class PauseAnomaly(Anomaly):
         super().__init__(params, target, conn, supported_targets=supported_targets, name=name)
 
     def _unpack_params(self, params):
-        self.duration = convert_time_to_s(params.get('duration', '0s'))
-        self.delay = convert_time_to_s(params.get('delay', '0s'))
+        pass
 
     def _run(self):
         self.target.stop()

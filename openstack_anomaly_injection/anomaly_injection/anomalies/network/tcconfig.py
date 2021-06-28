@@ -41,10 +41,10 @@ class TCAnomaly(Anomaly):
         temp_dir = tempfile.mkdtemp(prefix='temp_files')
         anomaly_file_name = f'{temp_dir}/tcanomaly.sh'
         with open(anomaly_file_name, 'w') as fd:
-            print("tcset --delay 100ms lo", file=fd)
-            # print("tcset", self.param_string, file=fd)
-            # print("sleep", self.duration, file=fd)
-            # print("tcdel", self.param_string, file=fd)
+            # print("tcset --delay 100ms lo", file=fd)
+            print("tcset", self.param_string, file=fd)
+            print("sleep", self.duration, file=fd)
+            print("tcdel", "-a", self.target.device, file=fd)
             # print("echo bunnies")
 
         st = os.stat(anomaly_file_name)

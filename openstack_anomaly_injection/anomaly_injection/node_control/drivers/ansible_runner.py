@@ -91,7 +91,8 @@ class AnsibleRunner:
             elif hv.get('failed'):
                 status = STATUS_FAILED
                 _task_name = play_source.get("tasks", [{}])[0].get("name", "")
-                _reason = hv['stdout'] if len(hv['stdout']) else hv['stderr']
+                sout = hv.get('stdout', "")
+                _reason = sout if len(sout) > 0 else hv.get("stderr", "")
                 raise Exception(f"Task %s has %s due to: %s" % (_task_name, status, _reason))
             else:
                 status = STATUS_OK

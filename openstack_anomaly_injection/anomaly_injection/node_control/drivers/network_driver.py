@@ -22,7 +22,7 @@ class NetworkDriver(BaseDriver):
 
         task = {
             'name': 'Script',
-            'raw':  "tcset --delay 100ms lo"
+            'script':  filename
 
         }
         hosts = [host]

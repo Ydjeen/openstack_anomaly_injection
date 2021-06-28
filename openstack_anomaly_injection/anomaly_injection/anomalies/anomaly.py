@@ -1,6 +1,8 @@
 import logging
 from time import sleep
 
+from anomalies.utils import convert_time_to_s
+
 log_info = logging.getLogger('infoLog')
 log_error = logging.getLogger('errorLog')
 log_debug = logging.getLogger('debuggerLog')
@@ -33,7 +35,6 @@ class Anomaly:
         self.name = name
         self._delay = params.get('delay', '0s')
         self._duration = params.get('duration', '0s')
-        self.duration = self.delay = 0
         self.supported_targets = supported_targets or list()
 
         _target = target.get('target')
@@ -42,6 +43,14 @@ class Anomaly:
         self.target = self.conn.get_target(target.get('target'), host=target.get('host'), id=target.get('id'),
                                            name=target.get('name'), interface=target.get('interface'))
         self._unpack_params(params)
+
+    @property
+    def duration(self):
+        return convert_time_to_s(self._duration)
+
+    @property
+    def delay(self):
+        return convert_time_to_s(self._delay)
 
     def run(self):
         """Default method for running anomalies.

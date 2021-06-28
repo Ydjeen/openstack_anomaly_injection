@@ -6,3 +6,4 @@ dist/
 build/
 anomaly_injection.egg-info/
 .idea/
+*.log
