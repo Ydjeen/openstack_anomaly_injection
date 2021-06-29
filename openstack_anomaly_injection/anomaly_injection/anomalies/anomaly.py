@@ -1,7 +1,7 @@
 import logging
 from time import sleep
 
-from anomalies.utils import convert_time_to_s
+from .utils import convert_time_to_s
 
 log_info = logging.getLogger('infoLog')
 log_error = logging.getLogger('errorLog')
