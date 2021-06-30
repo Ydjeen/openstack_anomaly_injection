@@ -94,10 +94,12 @@ class FaultInjectionHook(hook.HookAction):
             self.set_status(consts.HookStatus.SUCCESS)
         except Exception as e:
             import traceback
+            log_debug.debug(str(traceback.format_exc()))
             self.set_status(consts.HookStatus.FAILED)
             self.set_error(exception_name=type(e),
                            description='Fault injection failure',
                            details=str(e))
+            raise e
 
     def _init_cfg(self, args):
         cfg = args.get("config", None)
